@@ -11,7 +11,6 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        while (int x < 20) {
             DB::table('users')->insert([
                 'name' => str_random(10),
                 'email' => str_random(10) . '@test.io',
@@ -22,5 +21,4 @@ class UsersTableSeeder extends Seeder
                 'status' => 'ongoing',
             ]);
         }
-    }
 }
