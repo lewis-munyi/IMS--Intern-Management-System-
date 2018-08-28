@@ -22,11 +22,13 @@
     <link href="{{mix('css/app.css')}}" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     {{--<script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script>--}}
-
-
 </head>
 <body>
-
+<style>
+    html {
+        overflow-x: hidden;
+    }
+</style>
 
 <!-- Left Panel -->
 
@@ -312,36 +314,71 @@
 
 <!-- Modal -->
     <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
+                {{--<form>--}}
+                    <form action="{{ action('AddAdministratorsController@store') }}" method="post">
+                    {{ csrf_field() }}
                 <div class="modal-header">
-                    <h5 class="modal-title" id="addUserModalTitle">Add administrator</h5>
+                    <h5 class="modal-title" id="addUserModalTitle">Add an administrator</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
+
+                        <div class="row">
+                            {{--div.col.col-sm-12--}}
+                        </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp" placeholder="John Doe">
+                            <small id="nameHelp" class="form-text text-muted">Enter the employee's full name. </small>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
                             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <label for="national_id">ID Number</label>
+                            <input type="number" class="form-control" id="national_id" name="national_id" aria-describedby="IdHelp" placeholder="12345667889">
+                            <small id="idHelp" class="form-text text-muted">Enter national ID or passport number</small>
                         </div>
-                        <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="">
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
+                        <div class="form-group">
+                            <label for="role">Role</label>
+                            <select class="custom-select custom-select-lg mb-3" name="role" id="role">
+                                <option selected>Choose access level</option>
+                                <option value="admin">Administrator</option>
+                                <option value="super">Super Administrator</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="department">Department</label>
+                            <select class="custom-select custom-select-lg mb-3" id="department" name="department">
+                                <option selected>Choose department</option>
+                                <option value="ict">ICT</option>
+                                <option value="hr">Human Resource</option>
+                                <option value="finance">Finance</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="status">Status</label>
+                            <select class="custom-select custom-select-lg mb-3" id="status" name="status">
+                                <option selected value="ongoing">Ongoing</option>
+                                <option value="complete">Complete</option>
+                            </select>
+                        </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary rounded" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary rounded">Save changes</button>
+                    <button type="submit" class="btn btn-primary rounded">Save changes</button>
                 </div>
+                </form>
             </div>
         </div>
     </div>
@@ -374,6 +411,7 @@
                                                 <a class="btn btn-primary rounded pull-right" data-toggle="modal" data-target="#addUserModal" role="button">Add new user</a>
                                             </div>
                                             <div class="card-body">
+                                                <div class="table-responsive">
                                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                                     <thead>
                                                         <tr>
@@ -446,6 +484,7 @@
                                                         </tr>
                                                         </tbody>
                                                 </table>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -477,6 +516,7 @@
                                                 <a class="btn btn-primary rounded pull-right" href="#" role="button">Add new user</a>
                                             </div>
                                             <div class="card-body">
+                                                <div class="table-responsive">
                                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                                     <thead>
                                                     <tr>
@@ -549,6 +589,7 @@
                                                     </tr>
                                                     </tbody>
                                                 </table>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -580,6 +621,7 @@
                                                 <a class="btn btn-primary rounded pull-right" href="#" role="button">Add new user</a>
                                             </div>
                                             <div class="card-body">
+                                                <div class="table-responsive">
                                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                                     <thead>
                                                     <tr>
@@ -652,6 +694,7 @@
                                                     </tr>
                                                     </tbody>
                                                 </table>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
