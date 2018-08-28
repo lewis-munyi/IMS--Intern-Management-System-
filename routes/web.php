@@ -23,6 +23,8 @@ Route::get('/super', function () {
     return view('/super/dashboard');
 });
 
+//Route::resource('/super', 'AddAdministratorsController');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
@@ -34,3 +36,8 @@ Route::get('/test', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::post('super', [
+    'uses' => 'AddAdministratorsController@store'
+]);
