@@ -10,14 +10,15 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
+    {{--<script src="{{mix('css/app.css')}}" ></script>--}}
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/themify-icons.css">
     <link rel="stylesheet" href="assets/css/flag-icon.min.css">
     <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
-
-    {{--<link rel="stylesheet" href="assets/scss/style.css">--}}
+    {{--<link rel="stylesheet" href="assets/css/bootstrap-select.less">--}}
+    <link rel="stylesheet" href="assets/scss/style.css">
     <link href="assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
     <link href="{{mix('css/app.css')}}" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
@@ -48,34 +49,22 @@
                 </li>
                 <h3 class="menu-title">Records</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <i class="menu-icon fa fa-laptop"></i>Manage users</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Manage users</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li>
-                            <i class="fa fa-puzzle-piece"></i>
-                            <a data-toggle="collapse" href="#alluserscollapsible" role="button" aria-expanded="false" aria-controls="alluserscollapsible">All users</a>
-                        </li>
-                        <li>
-                            <i class="fa fa-id-badge"></i>
-                            <a data-toggle="collapse" href="#allIctCollapsible" role="button" aria-expanded="false" aria-controls="allFinanceCollapsible">ICT</a>
-                        <li>
-                            <i class="fa fa-bars"></i>
-                            <a data-toggle="collapse" href="#allFinanceCollapsible" role="button" aria-expanded="false" aria-controls="allFinanceCollapsible">Finance</a>
-                        </li>
-                        <li>
-                            <i class="fa fa-puzzle-piece"></i>
-                            <a href="#alluserscollapsible" role="button" aria-expanded="false" aria-controls="allIctCollapsible">All records</a>
-                        </li>
-                        <li>
-                            <i class="fa fa-id-badge"></i>
-                            <a data-toggle="collapse" href="#allIctCollapsible" role="button" aria-expanded="false" aria-controls="allFinanceCollapsible">ICT</a>
-                        <li>
-                            <i class="fa fa-bars"></i>
-                            <a data-toggle="collapse" href="#allFinanceCollapsible" role="button" aria-expanded="false" aria-controls="allFinanceCollapsible">Finance</a>
-                        </li>
+                        <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">All records</a></li>
+                        <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">ICT</a></li>
+                        <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Finance</a></li>
+                        <li><i class="fa fa-share-square-o"></i><a href="ui-social-buttons.html">Human resource</a></li>
+                        <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">ICT</a></li>
+                        <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Finance</a></li>
+                        <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">ICT</a></li>
+                        <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Finance</a></li>
+                        <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">ICT</a></li>
+                        <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Finance</a></li>
                     </ul>
                 </li>
                 {{--End Side-Nav--}}
-                <h3 class="menu-title">Reports</h3><!-- /.menu-title -->
+                <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Components</a>
                     <ul class="sub-menu children dropdown-menu">
@@ -99,14 +88,14 @@
                         <li><i class="fa fa-table"></i><a href="tables-data.html">Data Table</a></li>
                     </ul>
                 </li>
-                {{--<li class="menu-item-has-children dropdown">
+                <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic Form</a></li>
                         <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
                     </ul>
                 </li>
-                Dummy links
+
                 <h3 class="menu-title">Icons</h3><!-- /.menu-title -->
 
                 <li class="menu-item-has-children dropdown">
@@ -143,8 +132,7 @@
                         <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Register</a></li>
                         <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a></li>
                     </ul>
-                </li>--}}
-                {{--End Dummy Links--}}
+                </li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </nav>
@@ -156,7 +144,7 @@
 
 <div id="right-panel" class="right-panel">
 
-    <!-- Header section-->
+    <!-- Header-->
     <header id="header" class="header">
 
         <div class="header-menu">
@@ -164,12 +152,7 @@
             <div class="col-sm-7">
                 <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
                 <div class="header-left">
-                    <div class="page-header float-left">
-                        <div class="page-title">
-                            <h1>Dashboard</h1>
-                        </div>
-                    </div>
-                    {{--<button class="search-trigger"><i class="fa fa-search"></i></button>
+                    <button class="search-trigger"><i class="fa fa-search"></i></button>
                     <div class="form-inline">
                         <form class="search-form">
                             <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
@@ -241,7 +224,7 @@
                                 </span>
                             </a>
                         </div>
-                    </div>--}}
+                    </div>
                 </div>
             </div>
 
@@ -285,10 +268,10 @@
             </div>
         </div>
 
-    </header><!-- /header section -->
+    </header><!-- /header -->
     <!-- Header-->
 
-    {{--<div class="breadcrumbs">
+    <div class="breadcrumbs">
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
@@ -299,374 +282,17 @@
         <div class="col-sm-8">
             <div class="page-header float-right">
                 <div class="page-title">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Library</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Data</li>
+                    <ol class="breadcrumb text-right">
+                        <li class="active">Dashboard</li>
                     </ol>
                 </div>
             </div>
         </div>
     </div>
---}}
 
-<!-- Modal -->
-    <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addUserModalTitle">Add administrator</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                        </div>
-                        <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary rounded" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary rounded">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{--End add user modal--}}
-
-
-    {{--page content--}}
     <div class="content mt-3">
-        <div class="col-sm-12" id="collapsible-all-users">
-            <div class="accordion" id="accordionExample">
-                <div class="card">
-                    <div class="card-header" id="userscollapsible">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#alluserscollapsible" aria-expanded="true" aria-controls="alluserscollapsible">
-                                All users
-                            </button>
-                            <i class="fa fa-chevron-circle-down fa-2x pull-right" style='color: #272c33';></i>
-                        </h5>
-                    </div>
 
-                    <div id="alluserscollapsible" class="collapse" aria-labelledby="alluserscollapsible" data-parent="#accordionExample">
-                        <div class="card-body">
-                           <div class="animated fadeIn">
-                                <div class="row">
-
-                                    <div class="col-md-12">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <strong class="card-title">All users</strong>
-                                                <a class="btn btn-primary rounded pull-right" data-toggle="modal" data-target="#addUserModal" role="button">Add new user</a>
-                                            </div>
-                                            <div class="card-body">
-                                                <table id="bootstrap-data-table" class="table table-striped table-bordered">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Name</th>
-                                                            <th>Position</th>
-                                                            <th>Office</th>
-                                                            <th>Salary</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>Dai Rios</td>
-                                                            <td>Personnel Lead</td>
-                                                            <td>Edinburgh</td>
-                                                            <td>$217,500</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Gavin Joyce</td>
-                                                            <td>Developer</td>
-                                                            <td>Edinburgh</td>
-                                                            <td>$92,575</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Jennifer Chang</td>
-                                                            <td>Regional Director</td>
-                                                            <td>Singapore</td>
-                                                            <td>$357,650</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Brenden Wagner</td>
-                                                            <td>Software Engineer</td>
-                                                            <td>San Francisco</td>
-                                                            <td>$206,850</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Fiona Green</td>
-                                                            <td>Chief Operating Officer (COO)</td>
-                                                            <td>San Francisco</td>
-                                                            <td>$850,000</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Shou Itou</td>
-                                                            <td>Regional Marketing</td>
-                                                            <td>Tokyo</td>
-                                                            <td>$163,000</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Michelle House</td>
-                                                            <td>Integration Specialist</td>
-                                                            <td>Sidney</td>
-                                                            <td>$95,400</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Suki Burks</td>
-                                                            <td>Developer</td>
-                                                            <td>London</td>
-                                                            <td>$114,500</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Prescott Bartlett</td>
-                                                            <td>Technical Author</td>
-                                                            <td>London</td>
-                                                            <td>$145,000</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Donna Snider</td>
-                                                            <td>Customer Support</td>
-                                                            <td>New York</td>
-                                                            <td>$112,000</td>
-                                                        </tr>
-                                                        </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                           </div><!-- .animated -->
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" id="headingTwo">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#allIctCollapsible" aria-expanded="false" aria-controls="allIctCollapsible">
-                                All ICT administrators
-                            </button>
-                            <i class="fa fa-chevron-circle-down fa-2x pull-right"></i>
-                        </h5>
-                    </div>
-                    <div id="allIctCollapsible" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                        <div class="card-body">
-                            <div class="animated fadeIn">
-                                <div class="row">
-
-                                    <div class="col-md-12">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <strong class="card-title">All ICT administrators</strong>
-                                                <a class="btn btn-primary rounded pull-right" href="#" role="button">Add new user</a>
-                                            </div>
-                                            <div class="card-body">
-                                                <table id="bootstrap-data-table" class="table table-striped table-bordered">
-                                                    <thead>
-                                                    <tr>
-                                                        <th>Name</th>
-                                                        <th>Position</th>
-                                                        <th>Office</th>
-                                                        <th>Salary</th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    <tr>
-                                                        <td>Dai Rios</td>
-                                                        <td>Personnel Lead</td>
-                                                        <td>Edinburgh</td>
-                                                        <td>$217,500</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Gavin Joyce</td>
-                                                        <td>Developer</td>
-                                                        <td>Edinburgh</td>
-                                                        <td>$92,575</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Jennifer Chang</td>
-                                                        <td>Regional Director</td>
-                                                        <td>Singapore</td>
-                                                        <td>$357,650</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Brenden Wagner</td>
-                                                        <td>Software Engineer</td>
-                                                        <td>San Francisco</td>
-                                                        <td>$206,850</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Fiona Green</td>
-                                                        <td>Chief Operating Officer (COO)</td>
-                                                        <td>San Francisco</td>
-                                                        <td>$850,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Shou Itou</td>
-                                                        <td>Regional Marketing</td>
-                                                        <td>Tokyo</td>
-                                                        <td>$163,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Michelle House</td>
-                                                        <td>Integration Specialist</td>
-                                                        <td>Sidney</td>
-                                                        <td>$95,400</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Suki Burks</td>
-                                                        <td>Developer</td>
-                                                        <td>London</td>
-                                                        <td>$114,500</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Prescott Bartlett</td>
-                                                        <td>Technical Author</td>
-                                                        <td>London</td>
-                                                        <td>$145,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Donna Snider</td>
-                                                        <td>Customer Support</td>
-                                                        <td>New York</td>
-                                                        <td>$112,000</td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </div><!-- .animated -->
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" id="headingThree">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#allFinanceCollapsible" aria-expanded="false" aria-controls="allFinanceCollapsible">
-                                All Finance administrators
-                            </button>
-                            <i class="fa fa-chevron-circle-down fa-2x pull-right"></i>
-                        </h5>
-                    </div>
-                    <div id="allFinanceCollapsible" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                        <div class="card-body">
-                            <div class="animated fadeIn">
-                                <div class="row">
-
-                                    <div class="col-md-12">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <strong class="card-title">All Finance Admins</strong>
-                                                <a class="btn btn-primary rounded pull-right" href="#" role="button">Add new user</a>
-                                            </div>
-                                            <div class="card-body">
-                                                <table id="bootstrap-data-table" class="table table-striped table-bordered">
-                                                    <thead>
-                                                    <tr>
-                                                        <th>Name</th>
-                                                        <th>Position</th>
-                                                        <th>Office</th>
-                                                        <th>Salary</th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    <tr>
-                                                        <td>Dai Rios</td>
-                                                        <td>Personnel Lead</td>
-                                                        <td>Edinburgh</td>
-                                                        <td>$217,500</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Gavin Joyce</td>
-                                                        <td>Developer</td>
-                                                        <td>Edinburgh</td>
-                                                        <td>$92,575</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Jennifer Chang</td>
-                                                        <td>Regional Director</td>
-                                                        <td>Singapore</td>
-                                                        <td>$357,650</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Brenden Wagner</td>
-                                                        <td>Software Engineer</td>
-                                                        <td>San Francisco</td>
-                                                        <td>$206,850</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Fiona Green</td>
-                                                        <td>Chief Operating Officer (COO)</td>
-                                                        <td>San Francisco</td>
-                                                        <td>$850,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Shou Itou</td>
-                                                        <td>Regional Marketing</td>
-                                                        <td>Tokyo</td>
-                                                        <td>$163,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Michelle House</td>
-                                                        <td>Integration Specialist</td>
-                                                        <td>Sidney</td>
-                                                        <td>$95,400</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Suki Burks</td>
-                                                        <td>Developer</td>
-                                                        <td>London</td>
-                                                        <td>$114,500</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Prescott Bartlett</td>
-                                                        <td>Technical Author</td>
-                                                        <td>London</td>
-                                                        <td>$145,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Donna Snider</td>
-                                                        <td>Customer Support</td>
-                                                        <td>New York</td>
-                                                        <td>$112,000</td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </div><!-- .animated -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="divider"></div>
-        {{--Dummy content--}}
-        {{--<div class="col-sm-12">
+        <div class="col-sm-12">
             <div class="alert  alert-success alert-dismissible fade show" role="alert">
                 <span class="badge badge-pill badge-success">Success</span> You successfully read this important alert message.
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -674,6 +300,7 @@
                 </button>
             </div>
         </div>
+
 
         <div class="col-sm-6 col-lg-3">
             <div class="card text-white bg-flat-color-1">
@@ -1040,16 +667,20 @@
                 </div>
             </div>
             <!-- /# card -->
-        </div>--}}
-    {{--End dummy content--}}
+        </div>
+
 
     </div> <!-- .content -->
 </div><!-- /#right-panel -->
 
 <!-- Right Panel -->
 <script src="{{mix('js/app.js')}}" ></script>
+{{--<script src="assets/js/vendor/jquery-2.1.4.min.js"></script>--}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
 <script src="assets/js/plugins.js"></script>
 <script src="assets/js/main.js"></script>
+
+
 <script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
 <script src="assets/js/dashboard.js"></script>
 <script src="assets/js/widgets.js"></script>
