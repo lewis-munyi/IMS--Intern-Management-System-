@@ -20,7 +20,7 @@ Route::get('/index', function () {
 });
 
 Route::get('/super', function () {
-    return view('/super/dashboard');
+    return view('/super/dashboard') -> with('response', '1');
 });
 
 //Route::resource('/super', 'AddAdministratorsController');
@@ -39,5 +39,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::post('super', [
-    'uses' => 'AddAdministratorsController@store'
+    'uses' => 'UsersController@store'
 ]);
