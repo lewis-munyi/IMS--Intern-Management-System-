@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\users;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use function MongoDB\BSON\toJSON;
 
 class UsersController extends Controller
 {
@@ -15,7 +17,10 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        // Fetch all users
+        $users = DB::table('users')->get();
+//        $users = json_encode($users);
+        return view('super.dashboard')->with('response', $users);
     }
 
     /**
@@ -49,9 +54,13 @@ class UsersController extends Controller
             $user->password = bcrypt($user->password);
             $user->save();
 //            return redirect('/super')->with('response', '2');
-            return view('super.dashboard') -> with('response', 'success');
+            return view('super.dashboard') -> with('text', 'success');
         }
         catch (QueryException $exception){
+            $response = array();
+            $response['type'] = "Error";
+            $response['code'] = $exception->getCode();
+            $response['message'] = $exception->getMessage();
             return view('super.dashboard') -> with('response', $exception->getMessage());
         }
     }

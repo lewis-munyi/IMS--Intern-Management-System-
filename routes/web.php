@@ -19,9 +19,11 @@ Route::get('/index', function () {
     return view('index');
 });
 
-Route::get('/super', function () {
-    return view('/super/dashboard') -> with('response', '1');
-});
+//Route::get('/super', function () {
+//    $allusers = DB::table('users')->get();
+//    return view('/super/dashboard') -> with('response', compact($allusers));
+//});
+Route::get('/super', 'UsersController@index');
 
 //Route::resource('/super', 'AddAdministratorsController');
 
