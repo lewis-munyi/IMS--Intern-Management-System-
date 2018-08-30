@@ -108,45 +108,7 @@
                         <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
                     </ul>
                 </li>
-                Dummy links
-                <h3 class="menu-title">Icons</h3><!-- /.menu-title -->
-
-                <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-fort-awesome"></i><a href="font-fontawesome.html">Font Awesome</a></li>
-                        <li><i class="menu-icon ti-themify-logo"></i><a href="font-themify.html">Themefy Icons</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
-                </li>
-                <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-line-chart"></i><a href="charts-chartjs.html">Chart JS</a></li>
-                        <li><i class="menu-icon fa fa-area-chart"></i><a href="charts-flot.html">Flot Chart</a></li>
-                        <li><i class="menu-icon fa fa-pie-chart"></i><a href="charts-peity.html">Peity Chart</a></li>
-                    </ul>
-                </li>
-
-                <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Google Maps</a></li>
-                        <li><i class="menu-icon fa fa-street-view"></i><a href="maps-vector.html">Vector Maps</a></li>
-                    </ul>
-                </li>
-                <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
-                <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Login</a></li>
-                        <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Register</a></li>
-                        <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a></li>
-                    </ul>
-                </li>--}}
-                {{--End Dummy Links--}}
+                --}}
             </ul>
         </div><!-- /.navbar-collapse -->
     </nav>
@@ -171,79 +133,6 @@
                             <h1>Dashboard</h1>
                         </div>
                     </div>
-                    {{--<button class="search-trigger"><i class="fa fa-search"></i></button>
-                    <div class="form-inline">
-                        <form class="search-form">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
-                            <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
-                        </form>
-                    </div>
-
-                    <div class="dropdown for-notification">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-bell"></i>
-                            <span class="count bg-danger">5</span>
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="notification">
-                            <p class="red">You have 3 Notification</p>
-                            <a class="dropdown-item media bg-flat-color-1" href="#">
-                                <i class="fa fa-check"></i>
-                                <p>Server #1 overloaded.</p>
-                            </a>
-                            <a class="dropdown-item media bg-flat-color-4" href="#">
-                                <i class="fa fa-info"></i>
-                                <p>Server #2 overloaded.</p>
-                            </a>
-                            <a class="dropdown-item media bg-flat-color-5" href="#">
-                                <i class="fa fa-warning"></i>
-                                <p>Server #3 overloaded.</p>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="dropdown for-message">
-                        <button class="btn btn-secondary dropdown-toggle" type="button"
-                                id="message"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="ti-email"></i>
-                            <span class="count bg-primary">9</span>
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="message">
-                            <p class="red">You have 4 Mails</p>
-                            <a class="dropdown-item media bg-flat-color-1" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="images/avatar/1.jpg"></span>
-                                <span class="message media-body">
-                                    <span class="name float-left">Jonathan Smith</span>
-                                    <span class="time float-right">Just now</span>
-                                        <p>Hello, this is an example msg</p>
-                                </span>
-                            </a>
-                            <a class="dropdown-item media bg-flat-color-4" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="images/avatar/2.jpg"></span>
-                                <span class="message media-body">
-                                    <span class="name float-left">Jack Sanders</span>
-                                    <span class="time float-right">5 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
-                                </span>
-                            </a>
-                            <a class="dropdown-item media bg-flat-color-5" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="images/avatar/3.jpg"></span>
-                                <span class="message media-body">
-                                    <span class="name float-left">Cheryl Wheeler</span>
-                                    <span class="time float-right">10 minutes ago</span>
-                                        <p>Hello, this is an example msg</p>
-                                </span>
-                            </a>
-                            <a class="dropdown-item media bg-flat-color-3" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="images/avatar/4.jpg"></span>
-                                <span class="message media-body">
-                                    <span class="name float-left">Rachel Santos</span>
-                                    <span class="time float-right">15 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
-                                </span>
-                            </a>
-                        </div>
-                    </div>--}}
                 </div>
             </div>
 
@@ -252,14 +141,10 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
                     </a>
-
                     <div class="user-menu dropdown-menu">
                         <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
-
                         <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
-
                         <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
-
                         <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
                     </div>
                 </div>
@@ -311,13 +196,17 @@
         </div>
     </div>
 --}}
+    {{--<script>--}}
+        {{--var message = {{$response}};--}}
+        {{--console.log(message);--}}
+    {{--</script>--}}
 
 <!-- Modal -->
     <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 {{--<form>--}}
-                    <form action="{{ action('AddAdministratorsController@store') }}" method="post">
+                    <form action="{{ action('UsersController@store') }}" method="post">
                     {{ csrf_field() }}
                 <div class="modal-header">
                     <h5 class="modal-title" id="addUserModalTitle">Add an administrator</h5>
@@ -353,24 +242,26 @@
                             <label for="role">Role</label>
                             <select class="custom-select custom-select-lg mb-3" name="role" id="role">
                                 <option selected>Choose access level</option>
-                                <option value="admin">Administrator</option>
-                                <option value="super">Super Administrator</option>
+                                <option value="Administrator">Administrator</option>
+                                <option value="Intern">Intern</option>
+                                <option value="Attache">Attache</option>
+                                <option value="Super-Administrator">Super Administrator</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="department">Department</label>
                             <select class="custom-select custom-select-lg mb-3" id="department" name="department">
                                 <option selected>Choose department</option>
-                                <option value="ict">ICT</option>
-                                <option value="hr">Human Resource</option>
-                                <option value="finance">Finance</option>
+                                <option value="ICT">ICT</option>
+                                <option value="Human-resource">Human Resource</option>
+                                <option value="Finance">Finance</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="status">Status</label>
                             <select class="custom-select custom-select-lg mb-3" id="status" name="status">
                                 <option selected value="ongoing">Ongoing</option>
-                                <option value="complete">Complete</option>
+                                <option value="Complete">Complete</option>
                             </select>
                         </div>
                 </div>
@@ -386,102 +277,126 @@
 
 
     {{--page content--}}
+    {{--Alert on success--}}
+    {{--@if(!$user->isEmpty())
+    // $result is not empty
+        <div class="col-sm-12">
+            <div class="alert  alert-success alert-dismissible fade show" role="alert">
+                <span class="badge badge-pill badge-success">Success</span> You successfully read this important alert message.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    @else
+    // $result is empty
+    @endif--}}
+    {{--Enr alert on success--}}
+    <script>
+        
+    </script>
     <div class="content mt-3">
+
+        @if($response == 'success')
+            <div class="col-sm-12">
+                <div class="alert  alert-success alert-dismissible fade show" role="alert">
+                    <span class="badge badge-pill badge-success">Ok</span> User has been added successfully!
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        {{--@else--}}
+            {{--<p>Hello world</p>--}}
+            {{--<div class="col-sm-12">--}}
+                {{--<div class="alert  alert-danger alert-dismissible fade show" role="alert">--}}
+                    {{--<span class="badge badge-pill badge-danger">ERROR!</span>--}}
+                    {{--<script>document.write({{json_encode($response)}})</script>--}}
+                    {{--<button type="button" class="close" data-dismiss="alert" aria-label="Close">--}}
+                        {{--<span aria-hidden="true">&times;</span>--}}
+                    {{--</button>--}}
+                    {{--<b>User has NOT been added.</b><br>--}}
+                    {{--{{$response}}--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        @endif
+
+
         <div class="col-sm-12" id="collapsible-all-users">
             <div class="accordion" id="accordionExample">
+                {{--All admins--}}
                 <div class="card">
                     <div class="card-header" id="userscollapsible">
                         <h5 class="mb-0">
                             <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#alluserscollapsible" aria-expanded="true" aria-controls="alluserscollapsible">
-                                All users
+                                All administrators
                             </button>
-                            <i class="fa fa-chevron-circle-down fa-2x pull-right" style='color: #272c33';></i>
+                            <i class="fa fa-chevron-circle-down fa-2x pull-right" style='color: #272c33;' data-toggle="collapse" data-target="#alluserscollapsible" aria-expanded="true" aria-controls="alluserscollapsible"></i>
                         </h5>
                     </div>
-
                     <div id="alluserscollapsible" class="collapse" aria-labelledby="alluserscollapsible" data-parent="#accordionExample">
                         <div class="card-body">
                            <div class="animated fadeIn">
                                 <div class="row">
-
                                     <div class="col-md-12">
                                         <div class="card">
                                             <div class="card-header">
                                                 <strong class="card-title">All users</strong>
                                                 <a class="btn btn-primary rounded pull-right" data-toggle="modal" data-target="#addUserModal" role="button">Add new user</a>
                                             </div>
+
                                             <div class="card-body">
                                                 <div class="table-responsive">
                                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                                     <thead>
                                                         <tr>
+                                                            <th>No.</th>
                                                             <th>Name</th>
-                                                            <th>Position</th>
-                                                            <th>Office</th>
-                                                            <th>Salary</th>
+                                                            <th>Email</th>
+                                                            <th>ID/Passport no.</th>
+                                                            <th>Role</th>
+                                                            <th>Department</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr>
-                                                            <td>Dai Rios</td>
-                                                            <td>Personnel Lead</td>
-                                                            <td>Edinburgh</td>
-                                                            <td>$217,500</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Gavin Joyce</td>
-                                                            <td>Developer</td>
-                                                            <td>Edinburgh</td>
-                                                            <td>$92,575</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Jennifer Chang</td>
-                                                            <td>Regional Director</td>
-                                                            <td>Singapore</td>
-                                                            <td>$357,650</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Brenden Wagner</td>
-                                                            <td>Software Engineer</td>
-                                                            <td>San Francisco</td>
-                                                            <td>$206,850</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Fiona Green</td>
-                                                            <td>Chief Operating Officer (COO)</td>
-                                                            <td>San Francisco</td>
-                                                            <td>$850,000</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Shou Itou</td>
-                                                            <td>Regional Marketing</td>
-                                                            <td>Tokyo</td>
-                                                            <td>$163,000</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Michelle House</td>
-                                                            <td>Integration Specialist</td>
-                                                            <td>Sidney</td>
-                                                            <td>$95,400</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Suki Burks</td>
-                                                            <td>Developer</td>
-                                                            <td>London</td>
-                                                            <td>$114,500</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Prescott Bartlett</td>
-                                                            <td>Technical Author</td>
-                                                            <td>London</td>
-                                                            <td>$145,000</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Donna Snider</td>
-                                                            <td>Customer Support</td>
-                                                            <td>New York</td>
-                                                            <td>$112,000</td>
-                                                        </tr>
+                                                    {{--<script>--}}
+                                                        {{--var mydata = {{$response}};--}}
+                                                        {{--if (mydata.type = null){--}}
+                                                            {{--mydata.forEach(function(item){--}}
+                                                                {{--document.write("<tr><td>item.id</td> <td>item.name</td> <td>item.email</td> <td>item.national_id</td> <td>item.role</td> <td>item.department</td> </tr>");--}}
+                                                            {{--});--}}
+                                                        {{--}--}}
+                                                    {{--</script>--}}
+                                                        @if(is_array($response)== false || is_string($response) == false)
+                                                            @foreach($response as $user)
+                                                                @if($user->role != "Intern" && $user->role != "attache")
+                                                                    <tr>
+                                                                        <td>{{$user->id}}</td>
+                                                                        <td>{{$user->name}}</td>
+                                                                        <td>{{$user->email}} </td>
+                                                                        <td>{{$user->national_id}}</td>
+                                                                        <td>{{$user->role}}</td>
+                                                                        <td>{{$user->department}}</td>
+                                                                    </tr>
+                                                                @endif
+                                                            @endforeach
+                                                        @endif
+                                                        {{--<tr>--}}
+                                                            {{--<td>Gavin Joyce</td>--}}
+                                                            {{--<td>Developer</td>--}}
+                                                            {{--<td>Edinburgh</td>--}}
+                                                            {{--<td>$92,575</td>--}}
+                                                            {{--<td>Edinburgh</td>--}}
+                                                            {{--<td>$92,575</td>--}}
+                                                        {{--</tr>--}}
+                                                        {{--<tr>--}}
+                                                            {{--<td>Gavin Joyce</td>--}}
+                                                            {{--<td>Developer</td>--}}
+                                                            {{--<td>Edinburgh</td>--}}
+                                                            {{--<td>$92,575</td>--}}
+                                                            {{--<td>Edinburgh</td>--}}
+                                                            {{--<td>$92,575</td>--}}
+                                                        {{--</tr>--}}
                                                         </tbody>
                                                 </table>
                                                 </div>
@@ -495,13 +410,16 @@
                         </div>
                     </div>
                 </div>
+                {{--End all admins--}}
+
+                {{--ICT admins--}}
                 <div class="card">
                     <div class="card-header" id="headingTwo">
                         <h5 class="mb-0">
                             <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#allIctCollapsible" aria-expanded="false" aria-controls="allIctCollapsible">
                                 All ICT administrators
                             </button>
-                            <i class="fa fa-chevron-circle-down fa-2x pull-right"></i>
+                            <i class="fa fa-chevron-circle-down fa-2x pull-right" data-toggle="collapse" data-target="#allIctCollapsible" aria-expanded="true" aria-controls="allIctCollapsible"></i>
                         </h5>
                     </div>
                     <div id="allIctCollapsible" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
@@ -520,73 +438,41 @@
                                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                                     <thead>
                                                     <tr>
+                                                        <th>No.</th>
                                                         <th>Name</th>
-                                                        <th>Position</th>
-                                                        <th>Office</th>
-                                                        <th>Salary</th>
+                                                        <th>Email</th>
+                                                        <th>ID/Passport no.</th>
+                                                        <th>Role</th>
+                                                        <th>Department</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    <tr>
-                                                        <td>Dai Rios</td>
-                                                        <td>Personnel Lead</td>
-                                                        <td>Edinburgh</td>
-                                                        <td>$217,500</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Gavin Joyce</td>
-                                                        <td>Developer</td>
-                                                        <td>Edinburgh</td>
-                                                        <td>$92,575</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Jennifer Chang</td>
-                                                        <td>Regional Director</td>
-                                                        <td>Singapore</td>
-                                                        <td>$357,650</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Brenden Wagner</td>
-                                                        <td>Software Engineer</td>
-                                                        <td>San Francisco</td>
-                                                        <td>$206,850</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Fiona Green</td>
-                                                        <td>Chief Operating Officer (COO)</td>
-                                                        <td>San Francisco</td>
-                                                        <td>$850,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Shou Itou</td>
-                                                        <td>Regional Marketing</td>
-                                                        <td>Tokyo</td>
-                                                        <td>$163,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Michelle House</td>
-                                                        <td>Integration Specialist</td>
-                                                        <td>Sidney</td>
-                                                        <td>$95,400</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Suki Burks</td>
-                                                        <td>Developer</td>
-                                                        <td>London</td>
-                                                        <td>$114,500</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Prescott Bartlett</td>
-                                                        <td>Technical Author</td>
-                                                        <td>London</td>
-                                                        <td>$145,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Donna Snider</td>
-                                                        <td>Customer Support</td>
-                                                        <td>New York</td>
-                                                        <td>$112,000</td>
-                                                    </tr>
+                                                    @if(is_array($response)== false || is_string($response) == false)
+                                                        @foreach($response as $user)
+                                                            <tr>
+                                                                @if($user->department == "ICT" && $user->role != "Intern" && $user->role != "attache")
+                                                                    <td>{{$user->id}}</td>
+                                                                    <td>{{$user->name}}</td>
+                                                                    <td>{{$user->email}} </td>
+                                                                    <td>{{$user->national_id}}</td>
+                                                                    <td>{{$user->role}}</td>
+                                                                    <td>{{$user->department}}</td>
+                                                                @endif
+                                                            </tr>
+                                                        @endforeach
+                                                    @endif
+                                                    {{--<tr>--}}
+                                                        {{--<td>Prescott Bartlett</td>--}}
+                                                        {{--<td>Technical Author</td>--}}
+                                                        {{--<td>London</td>--}}
+                                                        {{--<td>$145,000</td>--}}
+                                                    {{--</tr>--}}
+                                                    {{--<tr>--}}
+                                                        {{--<td>Donna Snider</td>--}}
+                                                        {{--<td>Customer Support</td>--}}
+                                                        {{--<td>New York</td>--}}
+                                                        {{--<td>$112,000</td>--}}
+                                                    {{--</tr>--}}
                                                     </tbody>
                                                 </table>
                                                 </div>
@@ -600,13 +486,16 @@
                         </div>
                     </div>
                 </div>
+                {{--End ICT admins--}}
+
+                {{--Finance admins--}}
                 <div class="card">
                     <div class="card-header" id="headingThree">
                         <h5 class="mb-0">
                             <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#allFinanceCollapsible" aria-expanded="false" aria-controls="allFinanceCollapsible">
                                 All Finance administrators
                             </button>
-                            <i class="fa fa-chevron-circle-down fa-2x pull-right"></i>
+                            <i class="fa fa-chevron-circle-down fa-2x pull-right" data-toggle="collapse" data-target="#allFinanceCollapsible" aria-expanded="true" aria-controls="allFinanceCollapsible"></i>
                         </h5>
                     </div>
                     <div id="allFinanceCollapsible" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
@@ -625,75 +514,111 @@
                                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                                     <thead>
                                                     <tr>
+                                                        <th>No.</th>
                                                         <th>Name</th>
-                                                        <th>Position</th>
-                                                        <th>Office</th>
-                                                        <th>Salary</th>
+                                                        <th>Email</th>
+                                                        <th>ID/Passport no.</th>
+                                                        <th>Role</th>
+                                                        <th>Department</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    <tr>
-                                                        <td>Dai Rios</td>
-                                                        <td>Personnel Lead</td>
-                                                        <td>Edinburgh</td>
-                                                        <td>$217,500</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Gavin Joyce</td>
-                                                        <td>Developer</td>
-                                                        <td>Edinburgh</td>
-                                                        <td>$92,575</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Jennifer Chang</td>
-                                                        <td>Regional Director</td>
-                                                        <td>Singapore</td>
-                                                        <td>$357,650</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Brenden Wagner</td>
-                                                        <td>Software Engineer</td>
-                                                        <td>San Francisco</td>
-                                                        <td>$206,850</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Fiona Green</td>
-                                                        <td>Chief Operating Officer (COO)</td>
-                                                        <td>San Francisco</td>
-                                                        <td>$850,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Shou Itou</td>
-                                                        <td>Regional Marketing</td>
-                                                        <td>Tokyo</td>
-                                                        <td>$163,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Michelle House</td>
-                                                        <td>Integration Specialist</td>
-                                                        <td>Sidney</td>
-                                                        <td>$95,400</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Suki Burks</td>
-                                                        <td>Developer</td>
-                                                        <td>London</td>
-                                                        <td>$114,500</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Prescott Bartlett</td>
-                                                        <td>Technical Author</td>
-                                                        <td>London</td>
-                                                        <td>$145,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Donna Snider</td>
-                                                        <td>Customer Support</td>
-                                                        <td>New York</td>
-                                                        <td>$112,000</td>
-                                                    </tr>
+                                                    @if(is_array($response)== false || is_string($response) == false)
+                                                        @foreach($response as $user)
+                                                            @if($user->department == "Finance" && $user->role != "Intern" && $user->role != "attache")
+                                                                <tr>
+                                                                    <td>{{$user->id}}</td>
+                                                                    <td>{{$user->name}}</td>
+                                                                    <td>{{$user->email}} </td>
+                                                                    <td>{{$user->national_id}}</td>
+                                                                    <td>{{$user->role}}</td>
+                                                                    <td>{{$user->department}}</td>
+                                                                </tr>
+                                                            @endif
+                                                        @endforeach
+                                                    @endif
+                                                    {{--<tr>--}}
+                                                        {{--<td>Dai Rios</td>--}}
+                                                        {{--<td>Personnel Lead</td>--}}
+                                                        {{--<td>Edinburgh</td>--}}
+                                                        {{--<td>$217,500</td>--}}
+                                                    {{--</tr>--}}
                                                     </tbody>
                                                 </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- .animated -->
+                        </div>
+                    </div>
+                </div>
+                {{--end finance accounts--}}
+
+                {{--Human resource--}}
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#hr" aria-expanded="false" aria-controls="allIctCollapsible">
+                                All Human Resource administrators
+                            </button>
+                            <i class="fa fa-chevron-circle-down fa-2x pull-right" data-toggle="collapse" data-target="#hr" aria-expanded="true" aria-controls="hr"></i>
+                        </h5>
+                    </div>
+                    <div id="hr" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="animated fadeIn">
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <strong class="card-title">All Human Resource administrators</strong>
+                                                <a class="btn btn-primary rounded pull-right" href="#" role="button">Add new user</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="table-responsive">
+                                                    <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>No.</th>
+                                                            <th>Name</th>
+                                                            <th>Email</th>
+                                                            <th>ID/Passport no.</th>
+                                                            <th>Role</th>
+                                                            <th>Department</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        @if(is_array($response)== false || is_string($response) == false)
+                                                            @foreach($response as $user)
+                                                                <tr>
+                                                                    @if($user->department == "Human-resource" && $user->role != "Intern" && $user->role != "attache")
+                                                                        <td>{{$user->id}}</td>
+                                                                        <td>{{$user->name}}</td>
+                                                                        <td>{{$user->email}} </td>
+                                                                        <td>{{$user->national_id}}</td>
+                                                                        <td>{{$user->role}}</td>
+                                                                        <td>{{$user->department}}</td>
+                                                                    @endif
+                                                                </tr>
+                                                            @endforeach
+                                                        @endif
+                                                        {{--<tr>--}}
+                                                        {{--<td>Prescott Bartlett</td>--}}
+                                                        {{--<td>Technical Author</td>--}}
+                                                        {{--<td>London</td>--}}
+                                                        {{--<td>$145,000</td>--}}
+                                                        {{--</tr>--}}
+                                                        {{--<tr>--}}
+                                                        {{--<td>Donna Snider</td>--}}
+                                                        {{--<td>Customer Support</td>--}}
+                                                        {{--<td>New York</td>--}}
+                                                        {{--<td>$112,000</td>--}}
+                                                        {{--</tr>--}}
+                                                        </tbody>
+                                                    </table>
                                                 </div>
                                             </div>
                                         </div>
@@ -705,9 +630,162 @@
                         </div>
                     </div>
                 </div>
+                {{--End human resource--}}
+
+                {{--All interns--}}
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#interns" aria-expanded="false" aria-controls="allIctCollapsible">
+                                All Interns
+                            </button>
+                            <i class="fa fa-chevron-circle-down fa-2x pull-right" data-toggle="collapse" data-target="#interns" aria-expanded="true" aria-controls="interns"></i>
+                        </h5>
+                    </div>
+                    <div id="interns" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="animated fadeIn">
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <strong class="card-title">All interns</strong>
+                                                <a class="btn btn-primary rounded pull-right" href="#" role="button">Add new user</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="table-responsive">
+                                                    <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>No.</th>
+                                                            <th>Name</th>
+                                                            <th>Email</th>
+                                                            <th>ID/Passport no.</th>
+                                                            <th>Role</th>
+                                                            <th>Department</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        @if(is_array($response)== false || is_string($response) == false)
+                                                            @foreach($response as $user)
+                                                                <tr>
+                                                                    @if($user->role == "Intern")
+                                                                        <td>{{$user->id}}</td>
+                                                                        <td>{{$user->name}}</td>
+                                                                        <td>{{$user->email}} </td>
+                                                                        <td>{{$user->national_id}}</td>
+                                                                        <td>{{$user->role}}</td>
+                                                                        <td>{{$user->department}}</td>
+                                                                    @endif
+                                                                </tr>
+                                                            @endforeach
+                                                        @endif
+                                                        {{--<tr>--}}
+                                                        {{--<td>Prescott Bartlett</td>--}}
+                                                        {{--<td>Technical Author</td>--}}
+                                                        {{--<td>London</td>--}}
+                                                        {{--<td>$145,000</td>--}}
+                                                        {{--</tr>--}}
+                                                        {{--<tr>--}}
+                                                        {{--<td>Donna Snider</td>--}}
+                                                        {{--<td>Customer Support</td>--}}
+                                                        {{--<td>New York</td>--}}
+                                                        {{--<td>$112,000</td>--}}
+                                                        {{--</tr>--}}
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div><!-- .animated -->
+                        </div>
+                    </div>
+                </div>
+                {{--End all interns--}}
+
+                {{--All attaches--}}
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#attaches" aria-expanded="false" aria-controls="allIctCollapsible">
+                                All attaches
+                            </button>
+                            <i class="fa fa-chevron-circle-down fa-2x pull-right" data-toggle="collapse" data-target="#attaches" aria-expanded="true" aria-controls="attaches"></i>
+                        </h5>
+                    </div>
+                    <div id="attaches" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="animated fadeIn">
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <strong class="card-title">All attaches</strong>
+                                                <a class="btn btn-primary rounded pull-right" href="#" role="button">Add new user</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="table-responsive">
+                                                    <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>No.</th>
+                                                            <th>Name</th>
+                                                            <th>Email</th>
+                                                            <th>ID/Passport no.</th>
+                                                            <th>Role</th>
+                                                            <th>Department</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        @if(is_array($response)== false || is_string($response) == false)
+                                                            @foreach($response as $user)
+                                                                <tr>
+                                                                    @if($user->role == "Attaches")
+                                                                        <td>{{$user->id}}</td>
+                                                                        <td>{{$user->name}}</td>
+                                                                        <td>{{$user->email}} </td>
+                                                                        <td>{{$user->national_id}}</td>
+                                                                        <td>{{$user->role}}</td>
+                                                                        <td>{{$user->department}}</td>
+                                                                    @endif
+                                                                </tr>
+                                                            @endforeach
+                                                        @endif
+                                                        {{--<tr>--}}
+                                                        {{--<td>Prescott Bartlett</td>--}}
+                                                        {{--<td>Technical Author</td>--}}
+                                                        {{--<td>London</td>--}}
+                                                        {{--<td>$145,000</td>--}}
+                                                        {{--</tr>--}}
+                                                        {{--<tr>--}}
+                                                        {{--<td>Donna Snider</td>--}}
+                                                        {{--<td>Customer Support</td>--}}
+                                                        {{--<td>New York</td>--}}
+                                                        {{--<td>$112,000</td>--}}
+                                                        {{--</tr>--}}
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div><!-- .animated -->
+                        </div>
+                    </div>
+                </div>
+                {{--End all attaches--}}
             </div>
         </div>
-        <div class="divider"></div>
+
         {{--Dummy content--}}
         {{--<div class="col-sm-12">
             <div class="alert  alert-success alert-dismissible fade show" role="alert">
