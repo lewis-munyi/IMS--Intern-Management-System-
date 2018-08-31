@@ -45,41 +45,57 @@
 
         <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
+                {{--Navbar--}}
                 <li class="active">
-                    <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                    <a href="/super"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                 </li>
-                <h3 class="menu-title">Records</h3><!-- /.menu-title -->
+                {{--End navbar--}}
+
+                {{--Admin section--}}
+                <h3 class="menu-title">Administrators</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <i class="menu-icon fa fa-laptop"></i>Manage users</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <i class="menu-icon fa fa-th"></i>Manage admins</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li>
-                            <i class="fa fa-puzzle-piece"></i>
-                            <a data-toggle="collapse" href="#alluserscollapsible" role="button" aria-expanded="false" aria-controls="alluserscollapsible">All users</a>
+                            <i class="fa fa-lock"></i>
+                            <a data-toggle="collapse" href="#alluserscollapsible" role="button" aria-expanded="false" aria-controls="alluserscollapsible">All admins</a>
                         </li>
                         <li>
-                            <i class="fa fa-id-badge"></i>
-                            <a data-toggle="collapse" href="#allIctCollapsible" role="button" aria-expanded="false" aria-controls="allFinanceCollapsible">ICT</a>
+                            <i class="fa fa-lock"></i>
+                            <a data-toggle="collapse" href="#allIctCollapsible" role="button" aria-expanded="false" aria-controls="allFinanceCollapsible">ICT Admins</a>
                         <li>
-                            <i class="fa fa-bars"></i>
-                            <a data-toggle="collapse" href="#allFinanceCollapsible" role="button" aria-expanded="false" aria-controls="allFinanceCollapsible">Finance</a>
+                            <i class="fa fa-lock"></i>
+                            <a data-toggle="collapse" href="#allFinanceCollapsible" role="button" aria-expanded="false" aria-controls="allFinanceCollapsible"> Admins</a>
                         </li>
                         <li>
-                            <i class="fa fa-puzzle-piece"></i>
-                            <a href="#alluserscollapsible" role="button" aria-expanded="false" aria-controls="allIctCollapsible">All records</a>
-                        </li>
-                        <li>
-                            <i class="fa fa-id-badge"></i>
-                            <a data-toggle="collapse" href="#allIctCollapsible" role="button" aria-expanded="false" aria-controls="allFinanceCollapsible">ICT</a>
-                        <li>
-                            <i class="fa fa-bars"></i>
-                            <a data-toggle="collapse" href="#allFinanceCollapsible" role="button" aria-expanded="false" aria-controls="allFinanceCollapsible">Finance</a>
+                            <i class="fa fa-lock"></i>
+                            <a data-toggle="collapse" href="#hr" role="button" aria-expanded="false" aria-controls="hr">Human resource admins</a>
                         </li>
                     </ul>
                 </li>
+                {{--end admin--}}
+
+                {{--interns & attaches--}}
+                <h3 class="menu-title">Interns and attaches</h3><!-- /.menu-title -->
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <i class="menu-icon fa fa-th"></i>Manage interns</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li>
+                            <i class="fa fa-users"></i>
+                            <a data-toggle="collapse" href="#interns" role="button" aria-expanded="false" aria-controls="interns">Interns</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-users"></i>
+                            <a data-toggle="collapse" href="#attaches" role="button" aria-expanded="false" aria-controls="attaches">Attaches</a>
+                        </li>
+                    </ul>
+                </li>
+                {{--end interns & attaches--}}
+
                 {{--End Side-Nav--}}
                 <h3 class="menu-title">Reports</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Components</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Components</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Buttons</a></li>
                         <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Badges</a></li>
@@ -95,20 +111,13 @@
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Tables</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-table"></i><a href="tables-basic.html">Basic Table</a></li>
                         <li><i class="fa fa-table"></i><a href="tables-data.html">Data Table</a></li>
                     </ul>
                 </li>
-                {{--<li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic Form</a></li>
-                        <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
-                    </ul>
-                </li>
-                --}}
+                <br>
             </ul>
         </div><!-- /.navbar-collapse -->
     </nav>
@@ -121,14 +130,14 @@
 <div id="right-panel" class="right-panel">
 
     <!-- Header section-->
-    <header id="header" class="header">
+    <header id="header" class="header text-white" style="background-color: #272c33">
 
-        <div class="header-menu">
+        <div class="header-menu text-white">
 
             <div class="col-sm-7">
                 <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
                 <div class="header-left">
-                    <div class="page-header float-left">
+                    <div class="page-header float-left" style="background-color: #272c33">
                         <div class="page-title">
                             <h1>Dashboard</h1>
                         </div>
@@ -139,37 +148,40 @@
             <div class="col-sm-5">
                 <div class="user-area dropdown float-right">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
+                        {{--<i class="user-avatar rounded-circle" alt="User Avatar">--}}
+                            <i class="fa fa-user fa-2x text-white"></i>
+                        {{--<span data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}</span>--}}
+
                     </a>
                     <div class="user-menu dropdown-menu">
-                        <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
-                        <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
-                        <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
-                        <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
+                        <h6 class="dropdown-header">Acccount</h6>
+                        <a class="nav-link">{{Auth::user()->name}}<i class="fa fa-user pull-right"></i></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="nav-link" href="#">Logout<i class="fa fa-sign-out pull-right"></i></a>
                     </div>
                 </div>
 
-                <div class="language-select dropdown" id="language-select">
-                    <a class="dropdown-toggle" href="#" data-toggle="dropdown"  id="language" aria-haspopup="true" aria-expanded="true">
-                        <i class="flag-icon flag-icon-us"></i>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="language" >
-                        <div class="dropdown-item">
-                            <span class="flag-icon flag-icon-fr"></span>
-                        </div>
-                        <div class="dropdown-item">
-                            <i class="flag-icon flag-icon-es"></i>
-                        </div>
-                        <div class="dropdown-item">
-                            <i class="flag-icon flag-icon-us"></i>
-                        </div>
-                        <div class="dropdown-item">
-                            <i class="flag-icon flag-icon-it"></i>
-                        </div>
-                    </div>
-                </div>
+                {{--<div class="language-select dropdown" id="language-select">--}}
+                    {{--<a class="dropdown-toggle" href="#" data-toggle="dropdown"  id="language" aria-haspopup="true" aria-expanded="true">--}}
+                        {{--<i class="flag-icon flag-icon-us"></i>--}}
+                    {{--</a>--}}
+                    {{--<div class="dropdown-menu" aria-labelledby="language" >--}}
+                        {{--<div class="dropdown-item">--}}
+                            {{--<span class="flag-icon flag-icon-fr"></span>--}}
+                        {{--</div>--}}
+                        {{--<div class="dropdown-item">--}}
+                            {{--<i class="flag-icon flag-icon-es"></i>--}}
+                        {{--</div>--}}
+                        {{--<div class="dropdown-item">--}}
+                            {{--<i class="flag-icon flag-icon-us"></i>--}}
+                        {{--</div>--}}
+                        {{--<div class="dropdown-item">--}}
+                            {{--<i class="flag-icon flag-icon-it"></i>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
 
-            </div>
+            {{--</div>--}}
         </div>
 
     </header><!-- /header section -->
