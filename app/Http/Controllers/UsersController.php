@@ -6,7 +6,6 @@ use App\users;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use function MongoDB\BSON\toJSON;
 
 class UsersController extends Controller
 {
@@ -54,7 +53,7 @@ class UsersController extends Controller
             $user->password = bcrypt($user->password);
             $user->save();
 //            return redirect('/super')->with('response', '2');
-            return view('super.dashboard') -> with('text', 'success');
+            return view('super.dashboard') -> with('response', 'success');
         }
         catch (QueryException $exception){
             $response = array();
