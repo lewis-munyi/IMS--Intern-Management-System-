@@ -15,7 +15,7 @@
                             <label for="name" class="col-md-4 control-label">Name</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                <input id="name" type="text" class="form-control" name="name" required>
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -61,6 +61,65 @@
                             </div>
                         </div>
 
+                        {{--Custon--}}
+                        {{--<div class="form-group{{ $errors->has('national_id') ? ' has-error' : '' }}">
+                            <label for="national_id" class="col-md-4 control-label">ID/Passport number</label>
+
+                            <div class="col-md-6">
+                                <input id="national_id" type="number" class="form-control" name="national_id" value="{{ old('national_id') }}" required autofocus>
+
+                                @if ($errors->has('national_id'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('national_id') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('role') ? ' has-error' : '' }}">
+                                <label for="role"  class="col-md-4 control-label">Role</label>
+                            <div class="col-md-6">
+                                <select class="custom-select custom-select-lg mb-3" name="role" id="role" required autofocus>
+                                    <option selected>Choose access level</option>
+                                    <option value="Intern">Intern</option>
+                                    <option value="Attache">Attache</option>
+                                </select>
+                            </div>
+                               @if ($errors->has('role'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('role') }}</strong>
+                                    </span>
+                                @endif
+                        </div>
+                        <div class="form-group{{ $errors->has('department') ? ' has-error' : '' }}">
+                            <label for="department"class="col-md-4 control-label">Department</label>
+                            <div class="col-md-6">
+                                <select class="custom-select custom-select-lg mb-3" name="department" id="department" required autofocus>
+                                    <option selected>Choose department</option>
+                                    <option value="ICT">ICT</option>
+                                    <option value="Human-resource">Human Resource</option>
+                                    <option value="Finance">Finance</option>
+                                </select>
+                            </div>
+                            @if ($errors->has('department'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('department') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                        <div class="form-group{{ $errors->has('status') ? ' has-error' : '' }}">
+                            <label for="status"class="col-md-4 control-label">Status</label>
+                            <div class="col-md-6">
+                                <select class="custom-select custom-select-lg mb-3" name="status" id="status" required autofocus>
+                                    <option value="ongoing" selected>Ongoing</option>
+                                </select>
+                            </div>
+                            @if ($errors->has('status'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('status') }}</strong>
+                                </span>
+                            @endif
+                        </div>--}}
+                        {{--end custom--}}
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

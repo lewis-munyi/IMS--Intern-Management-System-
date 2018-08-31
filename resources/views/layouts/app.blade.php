@@ -76,5 +76,24 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        console.log(location.pathname)
+        if(location.pathname == "/signup"){
+            $('button').prop('disabled', true);
+            var check = function() {
+                if (document.getElementById('password1').value ==
+                    document.getElementById('password2').value) {
+                    document.getElementById('passwordSpan').style.color = 'green';
+                    document.getElementById('passwordSpan').innerHTML = 'Passwords match';
+                    $('button').prop('disabled', false);
+
+                } else {
+                    document.getElementById('passwordSpan').style.color = 'red';
+                    document.getElementById('passwordSpan').innerHTML = 'Passwords do not match';
+                    $('button').prop('disabled', true);
+                }
+            }
+        }
+    </script>
 </body>
 </html>

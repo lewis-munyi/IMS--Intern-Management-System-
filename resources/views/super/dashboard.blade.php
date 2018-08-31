@@ -24,11 +24,11 @@
     {{--<script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script>--}}
 </head>
 <body>
-<style>
-    html {
-        overflow-x: hidden;
-    }
-</style>
+{{--<style>--}}
+    {{--html {--}}
+        {{--overflow-x: scroll;--}}
+    {{--}--}}
+{{--</style>--}}
 
 <!-- Left Panel -->
 
@@ -157,7 +157,7 @@
                         <h6 class="dropdown-header">Acccount</h6>
                         <a class="nav-link">{{Auth::user()->name}}<i class="fa fa-user pull-right"></i></a>
                         <div class="dropdown-divider"></div>
-                        <a class="nav-link" href="#">Logout<i class="fa fa-sign-out pull-right"></i></a>
+                        <a class="nav-link" href="{{redirect('/')->with(Auth::logout())}}">Logout<i class="fa fa-sign-out pull-right"></i></a>
                     </div>
                 </div>
 
