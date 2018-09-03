@@ -14,3 +14,47 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/index', function () {
+    return view('index');
+});
+
+//Route::get('/super', function () {
+//    $allusers = DB::table('users')->get();
+//    return view('/super/dashboard') -> with('response', compact($allusers));
+//});
+Route::get('/super', 'UsersController@index');
+
+//Route::resource('/super', 'AddAdministratorsController');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
+Route::get('/test', function () {
+    return view('super/test');
+});
+
+Route::get('/signup', function (){
+    return view('auth/register2');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::post('super', [
+    'uses' => 'UsersController@store'
+]);
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
