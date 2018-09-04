@@ -16,11 +16,14 @@ class SchoolSupervisorEmail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+
+    public $report;
+    public function __construct($report)
     {
         //
+        $this->report = $report;
     }
-git 
+
     /**
      * Build the message.
      *
@@ -28,6 +31,19 @@ git
      */
     public function build()
     {
-        return $this->view('view.name');
+//        return $this->view('view.name');
+
+        return $this->from('lewismunyi97@gmail.com')
+            ->view('mail.studentreport')
+            ->text('mail.reportplain')
+            ->with(
+                [
+                    'testVarOne' => '1',
+                    'testVarTwo' => '2',
+                ]);
+//            ->attach(public_path('/images').'/report.jpg', [
+//                'as' => 'report.jpg',
+//                'mime' => 'image/jpeg',
+//            ]);
     }
 }

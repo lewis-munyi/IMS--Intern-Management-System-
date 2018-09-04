@@ -38,7 +38,7 @@ Route::get('/test', function () {
 Route::get('/signup', function (){
     return view('auth/register2');
 });
-
+Route::get('mail/send', 'Mailcontroller@send');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
