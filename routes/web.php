@@ -68,3 +68,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/schoolsupervisor', function () {
+    return view('schoolsupervisor');
+});
+Route::get('/progress', function () {
+    return view('progress');
+});

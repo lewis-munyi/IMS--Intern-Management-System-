@@ -35937,7 +35937,11 @@ module.exports = function spread(callback) {
 /* 36 */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
 // removed by extract-text-webpack-plugin
+=======
+throw new Error("Module build failed: ModuleBuildError: Module build failed: \r\n@import 'socials';\r\n^\r\n      File to import not found or unreadable: socials.\r\n      in C:\\Users\\Santana Macharia\\Projects\\IMS--Intern-Management-System-\\resources\\assets\\sass\\app.scss (line 8, column 1)\n    at runLoaders (C:\\Users\\Santana Macharia\\Projects\\IMS--Intern-Management-System-\\node_modules\\webpack\\lib\\NormalModule.js:195:19)\n    at C:\\Users\\Santana Macharia\\Projects\\IMS--Intern-Management-System-\\node_modules\\loader-runner\\lib\\LoaderRunner.js:364:11\n    at C:\\Users\\Santana Macharia\\Projects\\IMS--Intern-Management-System-\\node_modules\\loader-runner\\lib\\LoaderRunner.js:230:18\n    at context.callback (C:\\Users\\Santana Macharia\\Projects\\IMS--Intern-Management-System-\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at Object.asyncSassJobQueue.push [as callback] (C:\\Users\\Santana Macharia\\Projects\\IMS--Intern-Management-System-\\node_modules\\sass-loader\\lib\\loader.js:55:13)\n    at Object.done [as callback] (C:\\Users\\Santana Macharia\\Projects\\IMS--Intern-Management-System-\\node_modules\\neo-async\\async.js:7974:18)\n    at options.error (C:\\Users\\Santana Macharia\\Projects\\IMS--Intern-Management-System-\\node_modules\\node-sass\\lib\\index.js:294:32)");
+>>>>>>> 0be46131a1202292c719d3f688483953e5e0a08d
 
 /***/ })
 /******/ ]);
