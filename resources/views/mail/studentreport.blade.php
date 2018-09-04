@@ -1,20 +1,25 @@
-Hello <i>{{ $report->receiver }}</i>,
+
 <p>This is a report email for testing purposes! Also, it's the HTML version.</p>
 
 <p><u>report object values:</u></p>
+dn, casd,nsf
+sdv.k nm,fl
+S
 
+'l.zdff
+zacgatm,n;
 <div>
-    <p><b>report One:</b>&nbsp;{{ $report->report_one }}</p>
-    <p><b>report Two:</b>&nbsp;{{ $report->report_two }}</p>
+    <p><b>report One:</b>&nbsp;</p>
+    <p><b>report Two:</b>&nbsp;</p>
 </div>
 
 <p><u>Values passed by With method:</u></p>
 
 <div>
-    <p><b>testVarOne:</b>&nbsp;{{ $testVarOne }}</p>
-    <p><b>testVarTwo:</b>&nbsp;{{ $testVarTwo }}</p>
+    <p><b>testVarOne:</b>&nbsp;</p>
+    <p><b>testVarTwo:</b>&nbsp;</p>
 </div>
 
 Thank You,
 <br/>
-<i>{{ $report->sender }}</i>
+<i>Hello klasjfsdld</i>
