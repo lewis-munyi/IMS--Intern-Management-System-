@@ -7,6 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\DB;
+use TijsVerkoyen\CssToInlineStyles\CssToInlineStyles;
 
 class SchoolSupervisorEmail extends Mailable
 {
@@ -36,7 +37,7 @@ class SchoolSupervisorEmail extends Mailable
 
         return $this->from('lewismunyi97@gmail.com')
             ->view('mail.studentreport')
-            ->text('mail.reportplain')
+//            ->text('mail.reportplain')
             ->with(
                 [
                     'testVarOne' => '1',
@@ -46,5 +47,17 @@ class SchoolSupervisorEmail extends Mailable
 //                'as' => 'report.jpg',
 //                'mime' => 'image/jpeg',
 //            ]);
+    }
+
+    public function convert()
+    {
+        $converter = new CssToInlineStyles();
+        $converter->setUseInlineStylesBlock();
+        $converter->setCleanup();
+        $converter->setStripOriginalStyleTags();
+        $converter->setHTML($this->view);
+        $content =  $converter->convert();
+
+        return $content;
     }
 }
