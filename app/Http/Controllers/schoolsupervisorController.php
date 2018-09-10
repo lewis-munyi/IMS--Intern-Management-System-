@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Mail\SchoolSupervisorEmail;
 use Illuminate\Support\Facades\Mail;
+use TijsVerkoyen\CssToInlineStyles\CssToInlineStyles;
 class schoolsupervisorController extends Controller
 {
     /**
@@ -46,6 +47,8 @@ class schoolsupervisorController extends Controller
         $objreport->receiver = 'ReceiverUserName';
 
         Mail::to("$supervisor")->send(new SchoolSupervisorEmail($stack));
+//        Mail::send(['html' => 'view'], $data, $callback);
+//        Mail::send( ['html' => 'emails.newinvoice'], ['text' => $emailtext];
     }
 
     /**
