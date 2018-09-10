@@ -32,6 +32,13 @@ Route::post('super', [
 
 Route::get('/super', 'UsersController@index');
 
+Route::get('/school', 'SupervisorController@school');
+
+Route::get('/work', 'SupervisorController@work'); 
+
+Route::get('/addintern', 'SupervisorController@addintern');
+
+Route::get('/test4', 'ApplicationsController@index');
 //Route::resource('/super', 'AddAdministratorsController');
 
 Route::get('/dashboard', function () {
@@ -42,6 +49,7 @@ Route::get('/dashboard', function () {
 Route::get('/test', function(){
     return view('school.dashboard') -> with('response', "Enter your email address here. Your student's report will be sent to this address");
 });
+
 
 
 Route::get('/signup', function (){
