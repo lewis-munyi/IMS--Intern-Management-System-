@@ -5,7 +5,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Dashboard: {{ env('APP_NAME') }} </title>
-    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="description" content="env('APP_NAME')">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="apple-touch-icon" href="apple-icon.png">
@@ -155,7 +155,9 @@
                     </a>
                     <div class="user-menu dropdown-menu">
                         <h6 class="dropdown-header">Acccount</h6>
-                        <a class="nav-link">{{Auth::user()->name}}<i class="fa fa-user pull-right"></i></a>
+                        @if(Auth::check())
+                        <a class="nav-link">{{Auth::user()->role}}<i class="fa fa-user pull-right"></i></a>
+                        @endif
                         <div class="dropdown-divider"></div>
                         <a class="nav-link" href="{{redirect('/')->with(Auth::logout())}}">Logout<i class="fa fa-sign-out pull-right"></i></a>
                     </div>
