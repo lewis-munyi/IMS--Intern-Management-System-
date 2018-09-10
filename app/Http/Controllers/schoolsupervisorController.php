@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
+use App\Mail\SchoolSupervisorEmail;
+use Illuminate\Support\Facades\Mail;
+use TijsVerkoyen\CssToInlineStyles\CssToInlineStyles;
 class schoolsupervisorController extends Controller
 {
     /**
@@ -21,8 +24,31 @@ class schoolsupervisorController extends Controller
     {
         // $supervisor = new users;
         $supervisor = $request->input('email');
-        // echo $supervisor;
-        return view('school.dashboard') -> with('response', $supervisor);
+        $studentemails = DB::table('users')->where('department',  'ICT')->get();
+//         echo json_encode($studentemails);
+        $stack = array();
+
+         foreach ($studentemails as $studentemail){
+//             echo $studentemail->email." ";
+             array_push($stack, $studentemail->email);
+         }
+
+         $this->send($stack, $supervisor);
+         return view('school.dashboard') -> with('response', 'Successfully sent email to '.$supervisor);
+//       return view('school.dashboard') -> with('response', $supervisor);
+    }
+
+    public function send($stack, $supervisor)
+    {
+        $objreport = new \stdClass();
+        $objreport->report_one = 'report One Value';
+        $objreport->report_two = 'report Two Value';
+        $objreport->sender = 'SenderUserName';
+        $objreport->receiver = 'ReceiverUserName';
+
+        Mail::to("$supervisor")->send(new SchoolSupervisorEmail($stack));
+//        Mail::send(['html' => 'view'], $data, $callback);
+//        Mail::send( ['html' => 'emails.newinvoice'], ['text' => $emailtext];
     }
 
     /**

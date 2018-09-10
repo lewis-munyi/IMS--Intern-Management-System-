@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\DB;
 
 class UsersController extends Controller
 {
+//    public function __construct()
+//    {
+//        $this->middleware('auth');
+//    }
     /**
      * Display a listing of the resource.
      *
@@ -53,7 +57,8 @@ class UsersController extends Controller
             $user->password = bcrypt($user->password);
             $user->save();
 //            return redirect('/super')->with('response', '2');
-            return view('super.dashboard') -> with('response', 'success');
+//            return view('super.dashboard') -> with('response', 'success');
+            return redirect()->route('super');
         }
         catch (QueryException $exception){
             $response = array();
