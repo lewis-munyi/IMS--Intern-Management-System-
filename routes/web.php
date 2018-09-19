@@ -34,9 +34,15 @@ Route::get('/super', 'UsersController@index');
 
 Route::get('/school', 'SupervisorController@school');
 
-Route::get('/work', 'SupervisorController@work'); 
+Route::get('/work', 'SupervisorController@work');
 
-Route::get('/addintern', 'SupervisorController@addintern');
+Route::get('/createintern', 'SupervisorController@createintern');
+
+Route::post('/createintern', 'InternsController@store');
+
+Route::get('/supervisor.createintern', 'InternsController@create');
+
+Route::get('/interns.index', 'InternsController@index');
 
 Route::get('/test4', 'ApplicationsController@index');
 //Route::resource('/super', 'AddAdministratorsController');

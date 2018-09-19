@@ -19,6 +19,7 @@ class schoolsupervisorController extends Controller
         //
         return view('school.dashboard') -> with('response', "Enter your email address here. Your student's report will be sent to this address");
     }
+   
 
     public function sendMail(Request $request)
     {
