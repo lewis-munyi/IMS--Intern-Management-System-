@@ -1,12 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+
 <head>
-    <meta charset="utf-8">
+
+<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>schoolsupervisor</title>
+    <title>Dashboard: {{ env('APP_NAME') }}</title>
     <meta name="description" content="IMS Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -27,11 +30,32 @@
 
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dashboard: {{ env('APP_NAME') }} </title>
+    <meta name="description" content="env('APP_NAME')">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+
+    {{--<link rel="stylesheet" href="assets/scss/style.css">--}}
+    <link href="assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
+    <link href="{{mix('css/app.css')}}" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    {{--<script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script>--}}
+    @include('inc.messages')
 </head>
+
 <body>
 
-
-        <!-- Left Panel -->
+<!-- Left Panel -->
 
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
@@ -57,10 +81,8 @@
   }                  
 
 </style>
-                            <li><i class="fa fa-spinner"></i><a href="progress">Student's progress</a></li>
+                            <li><i class="fa fa-spinner"></i><a href="interns.index">Interns</a></li>
                              
-                             <li><i class="button" ></i><button id="visit">Make a visit</button></li>
-                              <li><i class="button" ></i><button id="myBtn">Inquiries</button></li>
 
                               <style>
 body {font-family: Arial, Helvetica, sans-serif;}
@@ -114,107 +136,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Please submit your inquiry below</p>
-    <form action="/action_page.php">
-  Full Name:<br>
-  <input type="text" name="firstname" placeholder="Please enter your full name">
-  <br>
-  Email:<br>
-  <input type="text" name="lastname" placeholder="Please enter your email address">
-  <br>
-  Inquiry:<br>
-  <input type="text" name="firstname" placeholder="Please enter your inquiry">
-  <br><br>
-  <input type="submit" value="Submit">
-</form> 
-  </div>
-
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Please submit your inquiry below</p>
-    <form action="/action_page.php">
-  Full Name:<br>
-  <input type="text" name="firstname" placeholder="Please enter your full name">
-  <br>
-  Email:<br>
-  <input type="text" name="lastname" placeholder="Please enter your email address">
-  <br>
-  Inquiry:<br>
-  <input type="text" name="firstname" placeholder="Please enter your inquiry">
-  <br><br>
-  <input type="submit" value="Submit">
-</form> 
-  </div>
-
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the button that opens the modal
-var btn = document.getElementById("visit");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
 
 </body>
 
@@ -290,7 +211,7 @@ window.onclick = function(event) {
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>School supervisor panel</h1>
+                        <h1>Head of Department</h1>
                     </div>
                 </div>
             </div>
@@ -369,13 +290,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 </html>
 
-
-
-
-           
-           
-                       
-     <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
+ <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
@@ -409,6 +324,103 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
    
 
+
+
+<div class="modal-content">
+            <form action="{{ action('InternsController@store') }}" method="post">
+                    {{ csrf_field() }}
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addUserModalTitle">Add Intern</h5>
+                  
+                    </div>
+                <div class="modal-body">
+
+                        <div class="row">
+                            <div class="col col-sm-12 col-lg-6">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp" placeholder="Full Name" required>
+                                    <small id="nameHelp" class="form-text text-muted">Enter the intern's full name. </small>
+                                </div>
+                            </div>
+                            <div class="col col-sm-12 col-lg-6">
+                                <div class="form-group">
+                                    <label for="email">Email address</label>
+                                    <input type="textl" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email"required>
+                                    <small id="emailHelp" class="form-text text-muted">Enter the intern's email address</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-sm-12 col-lg-6">
+                                <div class="form-group">
+                                    <label for="supervisor">Supervisor</label>
+                                    <input type="text" class="form-control" id="supervisor" name="supervisor" aria-describedby="supervisorHelp" placeholder="Supervisor" required>
+                                    <small id="idHelp" class="form-text text-muted">Enter the intern's supervisor</small>
+                                </div>
+                            </div>
+                            <div class="col col-sm-12 col-lg-6">
+                                <div class="form-group">
+                                    <label for="duties">Duties</label>
+                                    <input type="text" class="form-control" id="duties" name="duties" aria-describedby="dutiesHelp" placeholder="Duties" required>
+                                    <small id="idHelp" class="form-text text-muted">Enter the intern's duties</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-sm-12 col-lg-6">
+                                <div class="form-group">
+                                    <label for="start">Start Date</label>
+                                    <input type="date" class="form-control" id="start" name="start" aria-describedby="startHelp" placeholder="Start Date" required>
+                                    <small id="idHelp" class="form-text text-muted">Enter the intern's start date</small>
+                                </div>
+                            </div>
+                        <div class="col col-sm-12 col-lg-6">
+                            <div class="form-group">
+                                <label for="end">End Date</label>
+                                <input type="date" class="form-control" id="end" name="end" aria-describedby="stopHelp" placeholder="End date"required>
+                                <small id="idHelp" class="form-text text-muted">Enter the intern's end date</small>
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+                <div class="modal-footer">
+                    
+                    <button type="submit" class="btn btn-primary rounded">Submit</button>
+                </div>
+                </form>
+            </div>
+
+
+<script src="{{mix('js/app.js')}}" ></script>
+<script src="assets/js/plugins.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
+<script src="assets/js/dashboard.js"></script>
+<script src="assets/js/widgets.js"></script>
+<script src="assets/js/lib/vector-map/jquery.vmap.js"></script>
+<script src="assets/js/lib/vector-map/jquery.vmap.min.js"></script>
+<script src="assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
+<script src="assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>
+
+<script>
+    ( function ( $ ) {
+        "use strict";
+
+        jQuery( '#vmap' ).vectorMap( {
+            map: 'world_en',
+            backgroundColor: null,
+            color: '#ffffff',
+            hoverOpacity: 0.7,
+            selectedColor: '#1de9b6',
+            enableZoom: true,
+            showTooltip: true,
+            values: sample_data,
+            scaleColors: [ '#1de9b6', '#03a9f5' ],
+            normalizeFunction: 'polynomial'
+        } );
+    } )( jQuery );
+</script>
 
 </body>
 </html>
