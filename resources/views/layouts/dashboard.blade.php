@@ -1,3 +1,4 @@
+@extends('layouts.headers')
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
@@ -34,6 +35,7 @@
         {{--<link rel="stylesheet" href="{{asset('assets/css/bootstrap-select.less')}}"> --}}
         <link rel="stylesheet" href="{{asset('assets/scss/style.css')}}">
         <link href="{{asset('assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet')}}">
+        @yield('page-styles')
     </head>
 
     <body>
@@ -98,6 +100,7 @@
         <script src="assets/js/popper.min.js"></script>
         <script src="assets/js/plugins.js"></script>
         <script src="assets/js/main.js"></script>
+        @yield('page-scripts')
     </body>
 </html>
 
