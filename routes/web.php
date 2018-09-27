@@ -12,9 +12,18 @@
 */
 
 //Dashboard for all users
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
+
+Route::get('/', function () {
+    return view('dashboard');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 
 //Guest Views
 //Application form
@@ -49,3 +58,8 @@ Route::get('/', function () {
 
 
 
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
