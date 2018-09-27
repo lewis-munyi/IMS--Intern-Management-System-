@@ -22,6 +22,10 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
+Route::get('/boss', function () {
+    return view('boss.dashboard');
+});
+
 //Application form
 Route::get('/application', function () {
     return view('dashboard');
