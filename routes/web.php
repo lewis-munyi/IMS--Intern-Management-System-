@@ -11,22 +11,30 @@
 |
 */
 
-//Dashboard for all users
+//Guest Views
+//Welcome for all users
 Route::get('/welcome', function () {
     return view('welcome');
 });
 
+// Landing page
 Route::get('/', function () {
     return view('dashboard');
 });
 
+//Application form
+Route::get('/application', function () {
+    return view('dashboard');
+});
+
+// Auth views
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-//Guest Views
-//Application form
+
+
 
 //Post application data
 
