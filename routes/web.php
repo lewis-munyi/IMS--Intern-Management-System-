@@ -22,9 +22,7 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-Route::get('/boss', function () {
-    return view('boss.dashboard');
-});
+Route::resource('/intern' , 'InternController');
 
 //Application form
 Route::get('/application', function () {
