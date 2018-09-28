@@ -65,8 +65,8 @@
                             <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
                         </a>
                         <div class="user-menu dropdown-menu pull-right">
-                            {{--<a class="nav-link"><i class="fa fa- user"></i>{{ Auth::user()->name }}</a>--}}
-                            <a class="nav-link"><i class="fa fa- user"></i>Santana Macharia</a>
+                            <a class="nav-link"><i class="fa fa- user"></i>{{ Auth::user()->name }}</a>
+                            {{--<a class="nav-link"><i class="fa fa- user"></i>Santana Macharia</a>--}}
                             <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
                             <div class="dropdown-divider"></div>
                             <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>

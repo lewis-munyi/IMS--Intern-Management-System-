@@ -1,17 +1,14 @@
 <?php
 
 /*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+ *
+ *
+ * Guest views
+ *
+ *
+ *
+ */
 
-//Guest Views
 //Welcome for all users
 Route::get('/welcome', function () {
     return view('welcome');
@@ -22,20 +19,47 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-Route::resource('/intern' , 'InternController');
-
-//Application form
-Route::get('/application', function () {
-    return view('dashboard');
+Route::get('/logout', function () {
+    Auth::logout();
+    return view('welcome');
 });
 
+
+/*
+ *
+ * Auth views
+ *
+ *
+ */
 // Auth views
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+/*
+ *
+ * Auth group
+ *
+ *
+ */
+Route::group(['middleware'=>'auth'],function(){
+
+//      HR Dashboard
+    Route::get('/hr', function (){
+        return view('hr.dashboard');
+    })->name('hr');
+
+//    Intern route
+    Route::resource('/intern' , 'InternController');
+
+//Application form
+    Route::get('/application', function () {
+        return view('dashboard');
+    });
 
 
+
+});
 
 
 //Post application data
@@ -62,14 +86,3 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Accept or reject application (Post)
 //send email to applicant
-
-
-
-
-
-
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
