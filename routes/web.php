@@ -22,6 +22,8 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
+Route::resource('/intern' , 'InternController');
+
 //Application form
 Route::get('/application', function () {
     return view('dashboard');
