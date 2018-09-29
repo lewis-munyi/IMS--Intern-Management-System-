@@ -32,4 +32,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Log::class);
     }
+
+    //Application one to one relationship
+    public function application()
+    {
+        return $this->hasOne(Application::class);
+    }
 }
