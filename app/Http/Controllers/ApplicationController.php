@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Application;
 use Illuminate\Http\Request;
+use App\User;
 
 class ApplicationController extends Controller
 {
@@ -15,6 +16,8 @@ class ApplicationController extends Controller
     public function index()
     {
         //
+        $applications = Application::all();
+        return view('', compact('applications'));
     }
 
     /**
@@ -24,7 +27,8 @@ class ApplicationController extends Controller
      */
     public function create()
     {
-        //
+        //Display form for applying
+        return view('');
     }
 
     /**
@@ -35,7 +39,21 @@ class ApplicationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Post the application
+        $application = new Application;
+        $application->user_id = Auth::id();
+        $application->name = request('name');
+        $application->email = request('email');
+        $application->certificate_of_conduct = request('certificate_of_conduct');
+        $application->KCSE_certificate = request('KCSE_certificate');
+        $application->national_id = request('national_id');
+        $application->insurance = request('insurance');
+        $application->transcript = request('transcript');
+        $application->application_letter = request('application_letter');
+        $application->introduction_letter = request('introduction_letter');
+        dd($applcation->toArray());
+        $application->save();
+        return redirect('/');
     }
 
     /**
@@ -46,7 +64,10 @@ class ApplicationController extends Controller
      */
     public function show(Application $application)
     {
-        //
+        //Display one application
+        $application = Applciation::find($application->id);
+        dd($applcation);
+        return view('',  compact('applcation'));
     }
 
     /**
@@ -57,7 +78,9 @@ class ApplicationController extends Controller
      */
     public function edit(Application $application)
     {
-        //
+        $application = Application::find($application->id);
+        return view('', compact('application'));
+
     }
 
     /**
@@ -70,6 +93,19 @@ class ApplicationController extends Controller
     public function update(Request $request, Application $application)
     {
         //
+        $application = Application::find($application->id);
+        $application->name = request('name');
+        $application->email = request('email');
+        $application->certificate_of_conduct = request('certificate_of_conduct');
+        $application->KCSE_certificate = request('KCSE_certificate');
+        $application->national_id = request('national_id');
+        $application->insurance = request('insurance');
+        $application->transcript = request('transcript');
+        $application->application_letter = request('application_letter');
+        $application->introduction_letter = request('introduction_letter');
+        dd($applcation->toArray());
+        $application->save();
+        return redirect('/');
     }
 
     /**
@@ -81,5 +117,9 @@ class ApplicationController extends Controller
     public function destroy(Application $application)
     {
         //
+        $application = Application::find($application->id);
+        $application->delete();
+        return redirect('/');
+
     }
 }
