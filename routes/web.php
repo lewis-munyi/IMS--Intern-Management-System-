@@ -54,7 +54,7 @@ Route::group(['middleware'=>'auth'],function(){
 
 //Application form
     Route::get('/application', function () {
-        return view('dashboard');
+        return view('application');
     });
 
 
