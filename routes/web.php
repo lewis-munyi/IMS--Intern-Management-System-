@@ -56,6 +56,9 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/application', function () {
         return view('application');
     });
+    Route::get('/list-applications', function () {
+        return view('hr.applications');
+    });
 
 
 
