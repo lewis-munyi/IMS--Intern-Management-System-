@@ -1,9 +1,20 @@
+
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// Variables
-@import 'variable';
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+@import '~animate.css';
+
+@import 'css/normalize.css';
+@import 'css/font-awesome.min.css';
+@import 'css/themify-icons.css';
+@import 'css/cs-skin-elastic.css';
+@import 'scss/style.scss';
+@import 'css/jqvmap.min.css';
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
 
