@@ -52,16 +52,18 @@ Route::group(['middleware'=>'auth'],function(){
 //    Intern route
     Route::resource('/intern' , 'InternController');
 
-//Application form
+//    Application form
     Route::get('/application', function () {
         return view('application');
-    });
+    })->name('application');
+
     Route::get('/list-applications', function () {
         return view('hr.applications');
-    });
+    })->name('applications');
 
-
-
+    Route::get('/admin', function () {
+        return view('boss.dashboard');
+    })->name('admin');
 });
 
 
