@@ -13,7 +13,7 @@
     </li>
     <h3 class="menu-title">Subordinates</h3><!-- /.menu-title -->
     <li>
-        <a href="widgets.html"> <i class="menu-icon fa fa-users"></i>Interns</a>
+        <a href="{{route('interns')}}"> <i class="menu-icon fa fa-users"></i>Interns</a>
     </li>
     <li>
         <a href="widgets.html"> <i class="menu-icon fa fa-users"></i>Attaches</a>

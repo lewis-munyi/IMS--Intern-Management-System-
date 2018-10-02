@@ -64,6 +64,10 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/admin', function () {
         return view('boss.dashboard');
     })->name('admin');
+
+    Route::get('/interns', function () {
+        return view('boss.interns');
+    })->name('admin');
 });
 
 
