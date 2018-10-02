@@ -18,8 +18,6 @@
     <li>
         <a href="widgets.html"> <i class="menu-icon fa fa-users"></i>Attaches</a>
     </li>
-
-
     <h3 class="menu-title">Reports</h3><!-- /.menu-title -->
     <li>
         <a href="#"><i class="menu-icon fa fa-book"></i>Coming soon ...</a>
