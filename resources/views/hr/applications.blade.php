@@ -182,7 +182,7 @@
                             </div>
                             <div class="carousel-item">
                                 <img class="d-block w-100" src="https://picsum.photos//595/842" alt="Second slide">
-                                <div class="carousel-caption d-none d-md-block">
+                                <div cls="carousel-caption d-none d-md-block">
                                     <h5>Hello Caption</h5>
                                     <p>Hello caption</p>
                                 </div>
