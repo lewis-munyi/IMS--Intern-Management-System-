@@ -174,21 +174,21 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="d-block w-100" src="https://picsum.photos/400/900" alt="First slide">
+                                <img class="d-block w-100" src="https://picsum.photos/595/842" alt="First slide">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Hello Caption</h5>
                                     <p>Hello caption</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="https://picsum.photos/400/900" alt="Second slide">
+                                <img class="d-block w-100" src="https://picsum.photos//595/842" alt="Second slide">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Hello Caption</h5>
                                     <p>Hello caption</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="https://picsum.photos/400/900" alt="Third slide">
+                                <img class="d-block w-100" src="https://picsum.photos/595/842" alt="Third slide">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Hello Caption</h5>
                                     <p>Hello caption</p>
