@@ -75,11 +75,20 @@ Route::group(['middleware'=>'auth'],function(){
 
     Route::get('/interns', function () {
         return view('boss.interns');
-    })->name('admin');
+    })->name('interns');
 
     Route::get('/attache', function () {
         return view('attache.dashboard');
     })->name('attache');
+
+    Route::get('/test', function () {
+        return view('super_admin.test');
+    })->name('test');
+
+    Route::get('/super', function () {
+        return view('super_admin.dashboard');
+    })->name('superadmin');
+
 });
 
 
