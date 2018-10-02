@@ -16,7 +16,7 @@ Route::get('/welcome', function () {
 
 // Landing page
 Route::get('/', function () {
-    return view('dashboard');
+    return view('landing');
 });
 
 Route::get('/logout', function () {
@@ -33,6 +33,10 @@ Route::get('/logout', function () {
  */
 // Auth views
 Auth::routes();
+
+Route::get('/landingpage', function () {
+    return view('landing');
+})->name('landingpage');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -68,6 +72,10 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/admin', function () {
         return view('boss.dashboard');
     })->name('admin');
+
+    Route::get('/attache', function () {
+        return view('attache.dashboard');
+    })->name('attache');
 });
 
 
