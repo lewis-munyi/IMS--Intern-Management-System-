@@ -34,7 +34,15 @@ Route::get('/logout', function () {
 // Auth views
 Auth::routes();
 
+Route::get('/landingpage', function () {
+    return view('landing');
+})->name('landingpage');
+
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/school', function () {
+    return view('school.dashboard');
+})->name('school');
 
 /*
  *
@@ -68,6 +76,10 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/interns', function () {
         return view('boss.interns');
     })->name('admin');
+
+    Route::get('/attache', function () {
+        return view('attache.dashboard');
+    })->name('attache');
 });
 
 
