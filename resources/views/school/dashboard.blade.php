@@ -5,7 +5,7 @@
         @csrf
         <span>
             <p>
-                Enter your email address. All the details of the student you registered will be sent to this email.
+                Enter your email address. All the details of the student you supervise will be sent to this email.
             </p>
         </span>
         <div class="form-group">
