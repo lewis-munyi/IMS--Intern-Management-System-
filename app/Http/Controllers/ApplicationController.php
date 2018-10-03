@@ -7,6 +7,20 @@ use Illuminate\Http\Request;
 
 class ApplicationController extends Controller
 {
+    public function applicationForm(Request $request){
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $id_no = $request->input('id_no');
+        $supervisor = $request->input('supervisor');
+        $id_file = $request->file('id_file');
+        $kcse = $request->file('kcse');
+        $transcripts = $request->file('transcripts');
+        $introduction = $request->file('introduction');
+        $application = $request->file('application');
+        $conduct = $request->file('conduct');
+        $insurance = $request->file('insurance');
+        return view('home');
+    }
     /**
      * Display a listing of the resource.
      *

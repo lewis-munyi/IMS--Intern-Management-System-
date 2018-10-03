@@ -34,7 +34,7 @@
                             </div>
                         @endif
 
-                            <form method="POST" action="">
+                            <form method="POST" action="{{route('make-application')}}">
                                 {{csrf_field()}}
                                 <fieldset class="scheduler-border">
                                     <legend class="scheduler-border">Personal details</legend>
@@ -101,22 +101,28 @@
                                 <fieldset class="scheduler-border">
                                     <legend class="scheduler-border">School documents</legend>
                                     <div class="row d-flex justify-content-center">
-                                        <div class="col col-sm-12 col-lg-4 ">
+                                        <div class="col col-sm-12 col-lg-3 ">
                                             <div class="form-group">
                                                 <label for="principle">KCSE Certificate</label>
                                                 <input type="file" class="form-control" id="kcse" name="kcse" placeholder="Upload scan" required>
                                             </div>
                                         </div>
-                                        <div class="col col-sm-12 col-lg-4 ">
+                                        <div class="col col-sm-12 col-lg-3 ">
                                             <div class="form-group">
                                                 <label for="serial_no">Transcripts</label>
                                                 <input type="file" class="form-control" id="transcripts" name="transcripts" placeholder="Upload scan" required>
                                             </div>
                                         </div>
-                                        <div class="col col-sm-12 col-lg-4">
+                                        <div class="col col-sm-12 col-lg-3">
                                             <div class="form-group">
                                                 <label for="insurance">Letter from Institution</label>
                                                 <input type="file" class="form-control" id="introduction" name="introduction" placeholder="Upload scan" required>
+                                            </div>
+                                        </div>
+                                        <div class="col col-sm-12 col-lg-3 ">
+                                            <div class="form-group">
+                                                <label for="principle">Supervisor's Email</label>
+                                                <input type="email" class="form-control" id="supervisor" name="supervisor" placeholder="supervisor@site.domain" required>
                                             </div>
                                         </div>
                                     </div>

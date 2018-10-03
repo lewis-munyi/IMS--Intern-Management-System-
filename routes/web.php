@@ -65,6 +65,8 @@ Route::group(['middleware'=>'auth'],function(){
         return view('application');
     })->name('application');
 
+    Route::post('/make-application', 'ApplicationController@applicationForm')->name('make-application');
+
     Route::get('/list-applications', function () {
         return view('hr.applications');
     })->name('applications');
