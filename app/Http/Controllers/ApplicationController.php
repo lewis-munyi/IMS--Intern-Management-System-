@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Application;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ApplicationController extends Controller
 {
@@ -12,14 +13,27 @@ class ApplicationController extends Controller
         $email = $request->input('email');
         $id_no = $request->input('id_no');
         $supervisor = $request->input('supervisor');
-        $id_file = $request->file('id_file');
-        $kcse = $request->file('kcse');
-        $transcripts = $request->file('transcripts');
-        $introduction = $request->file('introduction');
-        $application = $request->file('application');
-        $conduct = $request->file('conduct');
-        $insurance = $request->file('insurance');
-        return view('home');
+        echo($name. " " . $email." ".$id_no." ".$supervisor);
+        
+        $id_file = $request->file('id_file')->store('application_documents');
+        $kcse = $request->file('kcse')->store('application_documents');
+        $transcripts = $request->file('transcripts')->store('application_documents');
+        $introduction = $request->file('introduction')->store('application_documents');
+        $application = $request->file('application')->store('application_documents');
+        $conduct = $request->file('conduct')->store('application_documents');
+        $insurance = $request->file('insurance')->store('application_documents');
+
+//        $id_file = Storage::putFile('images/application_documents', $request->file('id_file'));
+//        $kcse = Storage::putFile('application_documents', $request->file('kcse'));
+//        $transcripts = Storage::putFile('application_documents', $request->file('transcripts'));
+//        $introduction = Storage::putFile('application_documents', $request->file('introduction'));
+//        $application = Storage::putFile('application_documents', $request->file('application'));
+//        $conduct = Storage::putFile('application_documents', $request->file('conduct'));
+//        $insurance = Storage::putFile('application_documents', $request->file('insurance'));
+
+        echo($id_file." ". $kcse." ". $transcripts." ". $introduction ." ". $application. " ". $conduct. " ". $insurance );
+//        return view('home');
+
     }
     /**
      * Display a listing of the resource.
