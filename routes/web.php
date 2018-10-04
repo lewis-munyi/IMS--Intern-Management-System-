@@ -34,7 +34,15 @@ Route::get('/logout', function () {
 // Auth views
 Auth::routes();
 
+Route::get('/landingpage', function () {
+    return view('landing');
+})->name('landingpage');
+
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/school', function () {
+    return view('school.dashboard');
+})->name('school');
 
 /*
  *
@@ -52,12 +60,34 @@ Route::group(['middleware'=>'auth'],function(){
 //    Intern route
     Route::resource('/intern' , 'InternController');
 
-//Application form
+//    Application form
     Route::get('/application', function () {
-        return view('dashboard');
-    });
+        return view('application');
+    })->name('application');
 
+    Route::get('/list-applications', function () {
+        return view('hr.applications');
+    })->name('applications');
 
+    Route::get('/admin', function () {
+        return view('boss.dashboard');
+    })->name('admin');
+
+    Route::get('/interns', function () {
+        return view('boss.interns');
+    })->name('interns');
+
+    Route::get('/attache', function () {
+        return view('attache.dashboard');
+    })->name('attache');
+
+    Route::get('/test', function () {
+        return view('super_admin.test');
+    })->name('test');
+
+    Route::get('/super', function () {
+        return view('super_admin.dashboard');
+    })->name('superadmin');
 
 });
 
