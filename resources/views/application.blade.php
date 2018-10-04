@@ -34,9 +34,9 @@
                             </div>
                         @endif
 
-                            <form method="POST" action="{{route('make-application')}}">
+                            <form method="POST" action="{{route('make-application')}}" enctype="multipart/form-data>
                                 {{csrf_field()}}
-                                <fieldset class="scheduler-border">
+                                <fieldset class="scheduler-border" >
                                     <legend class="scheduler-border">Personal details</legend>
                                     <div class="row d-flex justify-content-center">
                                         <div class="col col-sm-5 col-lg-4">
@@ -97,6 +97,7 @@
                                             </div>
                                         </div>
                                     </div>--}}
+
                                 </fieldset>
                                 <fieldset class="scheduler-border">
                                     <legend class="scheduler-border">School documents</legend>
