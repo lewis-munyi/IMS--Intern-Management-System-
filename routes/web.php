@@ -126,3 +126,7 @@ Route::group(['middleware'=>'auth'],function(){
 
 //Accept or reject application (Post)
 //send email to applicant
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
