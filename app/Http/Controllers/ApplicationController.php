@@ -40,6 +40,13 @@ class ApplicationController extends Controller
         // $application->user_id = Auth::id();
         $application->name = request('name');
         $application->email = request('email');
+
+        $file = $request->file('KCSE_certificate');
+        $name = time().'.'.$file->getClientOriginalExtension();
+        $application->KCSE_certificate = $name;
+        $destinationPath = public_path('/files');
+        $file->move($destinationPath, $name);
+        
         // $application->certificate_of_conduct = request('certificate_of_conduct');
         // $application->KCSE_certificate = request('KCSE_certificate');
         // $application->national_id = request('national_id');
@@ -61,6 +68,17 @@ class ApplicationController extends Controller
         $application = Application::where('email', $email)->get();
         dd($appilcation);
         return view('myApplication', compact('application'));
+    }
+
+    public function viewDocument(Application $application)
+    {
+        $application = Application::find($application->id);
+        $parser = new \Smalot\PdfParser\Parser();
+        $path = "files"."/".$application->KCSE_certificate;
+        $pdf = $parser->parseFile($path);
+        $text = $pdf->getText();
+         
+        dd($text);
     }
 
     //Load HR Form

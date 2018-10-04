@@ -58,6 +58,9 @@ Route::group(['middleware'=>'auth'],function(){
     //Application approval
     Route::get('/hr/applications/{application}', 'ApplicationController@application')->name('application');
 
+    //View documents
+    Route::get('/hr/applications/{application}/documents', 'ApplicationController@viewDocument' );
+
     //Accept application
     Route::put('/hr/applications/{application}/accept', 'ApplicationController@acceptApplication')->name('accept');
 

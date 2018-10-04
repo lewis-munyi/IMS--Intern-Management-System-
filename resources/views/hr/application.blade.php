@@ -4,7 +4,8 @@
     <div class="card">
     <h4 class="card-header">Application by {{$application->name}}</h4>
     <div class="card-body">
-        <button class="btn btn-primary">View Documents</button>
+        
+        <a href='/hr/applications/{{$application->id}}/documents' class="btn btn-primary">View Documents</a>
         <p class="card-text"> <h3>Status: <span class="badge badge-pill badge-warning em-3">{{$application->status}}</span></h3></p>
         @if($application->status == 'pending')
         <div class="row">

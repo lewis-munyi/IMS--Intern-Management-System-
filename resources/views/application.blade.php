@@ -34,7 +34,7 @@
                             </div>
                         @endif
 
-                            <form method="POST" action="{{route('apply')}}">
+                            <form method="POST" action="{{route('apply')}}" enctype="multipart/form-data">
                                 {{csrf_field()}}
                                 <fieldset class="scheduler-border" >
                                     <legend class="scheduler-border">Personal details</legend>
@@ -105,7 +105,7 @@
                                         <div class="col col-sm-12 col-lg-3 ">
                                             <div class="form-group">
                                                 <label for="principle">KCSE Certificate</label>
-                                                <input type="file" class="form-control" id="kcse" name="kcse" placeholder="Upload scan" >
+                                                <input type="file" class="form-control" id="kcse" name="KCSE_certificate" placeholder="Upload scan" >
                                             </div>
                                         </div>
                                         <div class="col col-sm-12 col-lg-3 ">
@@ -123,7 +123,7 @@
                                         <div class="col col-sm-12 col-lg-3 ">
                                             <div class="form-group">
                                                 <label for="principle">Supervisor's Email</label>
-                                                <input type="email" class="form-control" id="supervisor" name="supervisor" placeholder="supervisor@site.domain" required>
+                                                <input type="email" class="form-control" id="supervisor" name="supervisor" placeholder="supervisor@site.domain" >
                                             </div>
                                         </div>
                                     </div>
