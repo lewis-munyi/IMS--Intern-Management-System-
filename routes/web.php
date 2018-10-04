@@ -67,6 +67,8 @@ Route::group(['middleware'=>'auth'],function(){
 
     Route::post('/make-application', 'ApplicationController@applicationForm')->name('make-application');
 
+    Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
     Route::get('/list-applications', function () {
         return view('hr.applications');
     })->name('applications');
@@ -119,6 +121,6 @@ Route::group(['middleware'=>'auth'],function(){
 //Accept or reject application (Post)
 //send email to applicant
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+//Auth::routes();
+//
+//Route::get('/home', 'HomeController@index')->name('home');
