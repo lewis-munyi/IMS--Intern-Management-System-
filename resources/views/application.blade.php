@@ -35,8 +35,8 @@
                         @endif
 
                             <form method="POST" action="{{route('make-application')}}" enctype="multipart/form-data>
-                                {{csrf_field()}}
-                                <fieldset class="scheduler-border" >
+                                @csrf
+                                <fieldset class = 'scheduler-boarder'>
                                     <legend class="scheduler-border">Personal details</legend>
                                     <div class="row d-flex justify-content-center">
                                         <div class="col col-sm-5 col-lg-4">
@@ -64,40 +64,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    {{--<div class="row mt-3">
-                                        <div class="col col-sm-12 col-lg-4">
-                                            <div class="form-group">
-                                                <label for="institution">Institution</label>
-                                                <select class="form-control" id="institution" name="institution" required>
-                                                    <option selected >Select one</option>
-                                                    @foreach($institutions as $institution)
-                                                        <option value="{{$institution->institutionname}}">{{$institution->institutionname}}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col col-sm-12 col-lg-4 ">
-                                            <div class="form-group">
-                                                <label for="academic_year">Academic year</label>
-                                                <select class="form-control" id="academic_year" name="academic_year" required>
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
-                                                    <option>5</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col col-sm-12 col-lg-4">
-                                            <div class="form-group">
-                                                <label for="graduation">Graduation year</label>
-                                                <select class="form-control" id="graduation" name="year_of_completion" required>
-                                                    <option value="" selected>Choose graduation value</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>--}}
-
                                 </fieldset>
                                 <fieldset class="scheduler-border">
                                     <legend class="scheduler-border">School documents</legend>
