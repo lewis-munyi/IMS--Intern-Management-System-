@@ -33,16 +33,8 @@ Route::get('/logout', function () {
  */
 // Auth views
 Auth::routes();
-
-Route::get('/landingpage', function () {
-    return view('landing');
-})->name('landingpage');
-
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/school', function () {
-    return view('school.dashboard');
-})->name('school');
 
 /*
  *
@@ -51,6 +43,14 @@ Route::get('/school', function () {
  *
  */
 Route::group(['middleware'=>'auth'],function(){
+
+    Route::get('/landingpage', function () {
+        return view('landing');
+    })->name('landingpage');
+
+    Route::get('/school', function () {
+        return view('school.dashboard');
+    })->name('school');
 
 //      HR Dashboard
     Route::get('/hr', function (){
