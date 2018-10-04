@@ -17,96 +17,96 @@ class ApplicationController extends Controller
     {
         //
         $applications = Application::all();
-        return view('', compact('applications'));
+        return view('allApplications', compact('applications'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    //Show application form
     public function create()
     {
         //Display form for applying
-        return view('');
+        return view('application');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    //Post an application
     public function store(Request $request)
     {
         //Post the application
         $application = new Application;
-        $application->user_id = Auth::id();
+        // $application->user_id = Auth::id();
         $application->name = request('name');
         $application->email = request('email');
-        $application->certificate_of_conduct = request('certificate_of_conduct');
-        $application->KCSE_certificate = request('KCSE_certificate');
-        $application->national_id = request('national_id');
-        $application->insurance = request('insurance');
-        $application->transcript = request('transcript');
-        $application->application_letter = request('application_letter');
-        $application->introduction_letter = request('introduction_letter');
+        // $application->certificate_of_conduct = request('certificate_of_conduct');
+        // $application->KCSE_certificate = request('KCSE_certificate');
+        // $application->national_id = request('national_id');
+        // $application->insurance = request('insurance');
+        // $application->transcript = request('transcript');
+        // $application->application_letter = request('application_letter');
+        // $application->introduction_letter = request('introduction_letter');
         dd($applcation->toArray());
         $application->save();
         return redirect('/');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Application  $application
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Application $application)
+    //Get my application
+    public function trackApplication(Request $request)
     {
-        //Display one application
-        $application = Applciation::find($application->id);
-        dd($applcation);
-        return view('',  compact('applcation'));
+        //Use data from cookies?
+        //Enter email Address
+        $email = request('email');
+        $application = Application::where('email', $email)->get();
+        dd($appilcation);
+        return view('myApplication', compact('application'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Application  $application
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Application $application)
+    //Load HR Form
+    public function applicationApprovalForm(Application $application)
     {
         $application = Application::find($application->id);
-        return view('', compact('application'));
-
+        return view('applicationApproval', compact('application'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Application  $application
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Application $application)
+    //Change approval to accepted/rejected
+    public function applicationApproval(Application $application, Request $request)
     {
-        //
         $application = Application::find($application->id);
-        $application->name = request('name');
-        $application->email = request('email');
-        $application->certificate_of_conduct = request('certificate_of_conduct');
-        $application->KCSE_certificate = request('KCSE_certificate');
-        $application->national_id = request('national_id');
-        $application->insurance = request('insurance');
-        $application->transcript = request('transcript');
-        $application->application_letter = request('application_letter');
-        $application->introduction_letter = request('introduction_letter');
-        dd($applcation->toArray());
+        $application->status = Request('status');
         $application->save();
-        return redirect('/');
+        return redirect('/hr');
     }
+
+
+
+    // /**
+    //  * Show the form for editing the specified resource.
+    //  *
+    //  * @param  \App\Application  $application
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function edit(Application $application)
+    // {
+    //     $application = Application::find($application->id);
+    //     return view('', compact('application'));
+
+    // }
+
+    // //Edit my appilcation
+    // public function update(Request $request, Application $application)
+    // {
+    //     //
+    //     $application = Application::find($application->id);
+    //     $application->name = request('name');
+    //     $application->email = request('email');
+    //     $application->certificate_of_conduct = request('certificate_of_conduct');
+    //     $application->KCSE_certificate = request('KCSE_certificate');
+    //     $application->national_id = request('national_id');
+    //     $application->insurance = request('insurance');
+    //     $application->transcript = request('transcript');
+    //     $application->application_letter = request('application_letter');
+    //     $application->introduction_letter = request('introduction_letter');
+    //     dd($applcation->toArray());
+    //     $application->save();
+    //     return redirect('/');
+    // }
 
     /**
      * Remove the specified resource from storage.
