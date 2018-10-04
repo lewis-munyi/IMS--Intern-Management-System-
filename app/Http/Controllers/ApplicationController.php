@@ -79,7 +79,7 @@ class ApplicationController extends Controller
         $application->transcript = request('transcript');
         $application->application_letter = request('application_letter');
         $application->introduction_letter = request('introduction_letter');
-        dd($applcation->toArray());
+        dd($application->toArray());
         $application->save();
         return redirect('/');
     }
@@ -93,8 +93,8 @@ class ApplicationController extends Controller
     public function show(Application $application)
     {
         //Display one application
-        $application = Applciation::find($application->id);
-        dd($applcation);
+        $application = Appliciation::find($application->id);
+        dd($application);
         return view('',  compact('applcation'));
     }
 
@@ -131,7 +131,7 @@ class ApplicationController extends Controller
         $application->transcript = request('transcript');
         $application->application_letter = request('application_letter');
         $application->introduction_letter = request('introduction_letter');
-        dd($applcation->toArray());
+        dd($application->toArray());
         $application->save();
         return redirect('/');
     }
