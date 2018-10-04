@@ -34,7 +34,7 @@
                             </div>
                         @endif
 
-                            <form method="POST" action="">
+                            <form method="POST" action="{{route('apply')}}">
                                 {{csrf_field()}}
                                 <fieldset class="scheduler-border">
                                     <legend class="scheduler-border">Personal details</legend>
@@ -42,25 +42,25 @@
                                         <div class="col col-sm-5 col-lg-4">
                                             <div class="form-group">
                                                 <label for="name">Name</label>
-                                                <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" required>
+                                                <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" >
                                             </div>
                                         </div>
                                         <div class="col col-sm-5 col-lg-4 ">
                                             <div class="form-group">
                                                 <label for="id_no">Email address</label>
-                                                <input type="email" class="form-control" id="email" name="email" placeholder="name@site.domain" required>
+                                                <input type="email" class="form-control" id="email" name="email" placeholder="name@site.domain" >
                                             </div>
                                         </div>
                                         <div class="col col-sm-12 col-lg-2">
                                             <div class="form-group">
                                                 <label for="id_no">ID. Number</label>
-                                                <input type="number" class="form-control" id="id_no" name="id_no" placeholder="123456" required>
+                                                <input type="number" class="form-control" id="id_no" name="id_no" placeholder="123456" >
                                             </div>
                                         </div>
                                         <div class="col col-sm-12 col-lg-2">
                                             <div class="form-group">
                                                 <label for="id_no">Copy of ID/Passport</label>
-                                                <input type="file" class="form-control" id="id_file" name="id_file" placeholder="Upload Scan" required>
+                                                <input type="file" class="form-control" id="id_file" name="id_file" placeholder="Upload Scan" >
                                             </div>
                                         </div>
                                     </div>
@@ -68,7 +68,7 @@
                                         <div class="col col-sm-12 col-lg-4">
                                             <div class="form-group">
                                                 <label for="institution">Institution</label>
-                                                <select class="form-control" id="institution" name="institution" required>
+                                                <select class="form-control" id="institution" name="institution" >
                                                     <option selected >Select one</option>
                                                     @foreach($institutions as $institution)
                                                         <option value="{{$institution->institutionname}}">{{$institution->institutionname}}</option>
@@ -79,7 +79,7 @@
                                         <div class="col col-sm-12 col-lg-4 ">
                                             <div class="form-group">
                                                 <label for="academic_year">Academic year</label>
-                                                <select class="form-control" id="academic_year" name="academic_year" required>
+                                                <select class="form-control" id="academic_year" name="academic_year" >
                                                     <option>1</option>
                                                     <option>2</option>
                                                     <option>3</option>
@@ -91,7 +91,7 @@
                                         <div class="col col-sm-12 col-lg-4">
                                             <div class="form-group">
                                                 <label for="graduation">Graduation year</label>
-                                                <select class="form-control" id="graduation" name="year_of_completion" required>
+                                                <select class="form-control" id="graduation" name="year_of_completion" >
                                                     <option value="" selected>Choose graduation value</option>
                                                 </select>
                                             </div>
@@ -104,19 +104,19 @@
                                         <div class="col col-sm-12 col-lg-4 ">
                                             <div class="form-group">
                                                 <label for="principle">KCSE Certificate</label>
-                                                <input type="file" class="form-control" id="kcse" name="kcse" placeholder="Upload scan" required>
+                                                <input type="file" class="form-control" id="kcse" name="kcse" placeholder="Upload scan" >
                                             </div>
                                         </div>
                                         <div class="col col-sm-12 col-lg-4 ">
                                             <div class="form-group">
                                                 <label for="serial_no">Transcripts</label>
-                                                <input type="file" class="form-control" id="transcripts" name="transcripts" placeholder="Upload scan" required>
+                                                <input type="file" class="form-control" id="transcripts" name="transcripts" placeholder="Upload scan" >
                                             </div>
                                         </div>
                                         <div class="col col-sm-12 col-lg-4">
                                             <div class="form-group">
                                                 <label for="insurance">Letter from Institution</label>
-                                                <input type="file" class="form-control" id="introduction" name="introduction" placeholder="Upload scan" required>
+                                                <input type="file" class="form-control" id="introduction" name="introduction" placeholder="Upload scan" >
                                             </div>
                                         </div>
                                     </div>
@@ -127,19 +127,19 @@
                                         <div class="col col-sm-12 col-lg-4">
                                             <div class="form-group">
                                                 <label for="application">Application Letter</label>
-                                                <input type="file" class="form-control" id="application" name="application" placeholder="Upload scan" required>
+                                                <input type="file" class="form-control" id="application" name="application" placeholder="Upload scan" >
                                             </div>
                                         </div>
                                         <div class="col col-sm-12 col-lg-4 ">
                                             <div class="form-group">
                                                 <label for="serial_no">Certificate of conduct</label>
-                                                <input type="file" class="form-control" id="conduct" name="conduct" placeholder="Upload scan" required>
+                                                <input type="file" class="form-control" id="conduct" name="conduct" placeholder="Upload scan" >
                                             </div>
                                         </div>
                                         <div class="col col-sm-12 col-lg-4">
                                             <div class="form-group">
                                                 <label for="insurance">Insurance</label>
-                                                <input type="file" class="form-control" id="insurance" name="insurance" placeholder="Upload scan" required>
+                                                <input type="file" class="form-control" id="insurance" name="insurance" placeholder="Upload scan" >
                                             </div>
                                         </div>
                                     </div>

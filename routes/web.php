@@ -53,9 +53,17 @@ Route::get('/school', function () {
 Route::group(['middleware'=>'auth'],function(){
 
 //      HR Dashboard
-    Route::get('/hr', function (){
-        return view('hr.dashboard');
-    })->name('hr');
+    Route::get('/hr', 'ApplicationController@index')->name('hr');
+
+    //Application approval
+    Route::get('/hr/applications/{application}', 'ApplicationController@application')->name('application');
+
+    //Accept application
+    Route::put('/hr/applications/{application}/accept', 'ApplicationController@acceptApplication')->name('accept');
+
+    //Reject Application
+    Route::put('/hr/applications/{application}/reject', 'ApplicationController@rejectApplication')->name('reject');
+    
 
 //    Intern route
     Route::resource('/intern' , 'InternController');
@@ -64,6 +72,8 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/application', function () {
         return view('application');
     })->name('application');
+
+    Route::post('/application', 'ApplicationController@store')->name('apply');
 
     Route::get('/list-applications', function () {
         return view('hr.applications');

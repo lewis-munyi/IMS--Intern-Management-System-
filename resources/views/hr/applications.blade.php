@@ -16,7 +16,6 @@
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Permanent staff</a>
         <ul class="sub-menu children dropdown-menu">
             <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Coming soon..</a></li>
-
         </ul>
     </li>
     <li class="menu-item-has-children active dropdown">

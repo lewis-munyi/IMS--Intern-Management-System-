@@ -8,16 +8,20 @@ use App\User;
 
 class ApplicationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    //Return all applications
     public function index()
     {
         //
-        $applications = Application::all();
-        return view('allApplications', compact('applications'));
+        $applications = Application::orderBy('created_at', 'desc')->get();
+        return view('hr.dashboard', compact('applications'));
+    }
+
+    //View a single application
+    public function application(Application $application)
+    {
+        $application = Application::find($application->id);
+        //  dd($application->status);
+        return view('hr.application', compact('application'));
     }
 
     //Show application form
@@ -42,7 +46,7 @@ class ApplicationController extends Controller
         // $application->transcript = request('transcript');
         // $application->application_letter = request('application_letter');
         // $application->introduction_letter = request('introduction_letter');
-        dd($applcation->toArray());
+        // dd($application->toArray());
         $application->save();
         return redirect('/');
     }
@@ -59,21 +63,22 @@ class ApplicationController extends Controller
     }
 
     //Load HR Form
-    public function applicationApprovalForm(Application $application)
+    public function acceptApplication(Application $application)
     {
         $application = Application::find($application->id);
-        return view('applicationApproval', compact('application'));
+        $application->status = 'accepted';
+        $application->save();
+        return redirect()->route('hr');  
     }
 
     //Change approval to accepted/rejected
-    public function applicationApproval(Application $application, Request $request)
+    public function rejectApplication(Application $application, Request $request)
     {
         $application = Application::find($application->id);
-        $application->status = Request('status');
+        $application->status = 'rejected';
         $application->save();
-        return redirect('/hr');
+        return redirect()->route('hr');  
     }
-
 
 
     // /**

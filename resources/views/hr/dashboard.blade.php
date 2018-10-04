@@ -99,14 +99,14 @@
                         <div class="card-header" id="headingOne">
                             <h5 class="mb-0">
                                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    All interns List
+                                    All Applications
                                 </button>
                             </h5>
                         </div>
 
                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                             <div class="card-body">
-                                <table class="table table-bordered">
+                                <table class="table table-bordered table-hover">
                                     <tr>
                                         <th>Number</th>
                                         <th>Name</th>
@@ -114,25 +114,29 @@
                                         <th>National_ID</th>
                                         <th>ROLE</th>
                                         <th>DEPARTMENT</th>
-                                        <th>Options</th>
+                                        <th>Approval</th>
                                     </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Casey Neitstatew</td>
-                                        <td>lewismunyi9447@gmail.com</td>
+                                    @foreach($applications as $application)
+                                    <tr class='clickable-row' data-href='http://127.0.0.1:8000/#'>
+                                        <td>{{$application->id}}</td>
+                                        <td>{{$application->name}}</td>
+                                        <td>{{$application->email}}</td>
                                         <td>129824837359</td>
-                                        <td>Intern</td>
+                                        <td>Attachment</td>
                                         <td>ICT</td>
                                         <td>
-                                            <a href="http://localhost:8000/student/95/edit">Edit</a>
+                                            <a href="/hr/applications/{{$application->id}}">View</a>
                                             &nbsp;|&nbsp;
-                                            <form action="http://localhost:8000/student/95" method="post" style="display: inline-block;" >
-                                                <input type="hidden" name="_token" value="uEsZM8NHLLpcg7kw56eVmDmRhlsOQgrGrXqkjd4I">
-                                                <input type="hidden" name="_method" value="DELETE">
-                                                <a href="javascript:;" onclick="confirm_delete(this.parentNode)">Delete</a>
-                                            </form>
+                                            @if($application->status == 'accepted')
+                                            <h5><span class="badge badge-pill badge-success em-3">{{$application->status}}</span></h5>
+                                            @elseif($application->status == 'rejected')
+                                            <h5><span class="badge badge-pill badge-danger em-3">{{$application->status}}</span></h5>
+                                            @else
+                                            <h5><span class="badge badge-pill badge-warning em-3">{{$application->status}}</span></h5>
+                                            @endif
                                         </td>
                                     </tr>
+                                    @endforeach
                                 </table>
                             </div>
                         </div>
@@ -196,6 +200,13 @@
             </div>
         </div>
     </div>
+    <script>
+        jQuery(document).ready(function($) {
+            $(".clickable-row").click(function() {
+                window.location = $(this).data("href");
+            });
+        });
+    </script>
 @endsection
 @section('page-scripts')
 @endsection
