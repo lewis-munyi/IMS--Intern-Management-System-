@@ -139,43 +139,44 @@
                                 <a href="#" class="btn btn-primary rounded" data-toggle="modal" data-target="#editProgress">Edit</a>
                             </div>
                         </div>
-                        <div id="progress">
-
-                        <tr>
-                            <th>Week</th>
-                            <th>Work put in</th>
-                            <th>Status</th>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi dicta error
-                                    facere rem. Accusantium autem commodi dolorem dolores, earum eius eum harum, impedit
-                                    ipsa minus, quidem sed similique tempore!
-                                </div>
-                                <div>Ad, assumenda, consequatur debitis dignissimos distinctio doloremque ducimus enim
-                                    et, eum fugiat impedit in itaque iure laborum minima minus modi nam nesciunt nihil
-                                    praesentium quae quasi quo sequi sint voluptatibus.
-                                </div>
-                                <div>Aperiam deleniti earum sed. Accusamus cumque debitis deleniti deserunt dignissimos
-                                    eos est in ipsum, minus nisi officiis quam quos reprehenderit sapiente ut.
-                                    Exercitationem expedita, nesciunt nihil perferendis quasi recusandae vero.
-                                </div>
-                                <div>Cumque dignissimos error iure, iusto laboriosam, minima necessitatibus, odio
-                                    perferendis possimus quae quas soluta sunt vitae. Atque doloribus dolorum, error
-                                    expedita laudantium magnam nisi, omnis placeat quas quidem voluptatem voluptates.
-                                </div>
-                                <div>Aliquam at deserunt dolor enim saepe sit temporibus! Ea laudantium nesciunt nisi
-                                    voluptatibus. Aspernatur cumque deserunt fugit hic ipsum itaque natus nobis porro
-                                    quas quos rem, voluptas voluptate voluptatem? Unde.
-                                </div></td>
-                            <td>Approved</td>
-                            {{--<tr v-for="progress in progresses">--}}
-                                {{--<td>@{{progress.week}}</td>--}}
-                                {{--<td>@{{progress.work}}</td>--}}
-                                {{--<td>@{{progress.status}}</td>--}}
-                            {{--</tr>--}}
-                        </div>
+                            <tr>
+                                <th>Week</th>
+                                <th>Work put in</th>
+                                <th>Status</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi dicta error
+                                        facere rem. Accusantium autem commodi dolorem dolores, earum eius eum harum, impedit
+                                        ipsa minus, quidem sed similique tempore!
+                                    </div>
+                                    <div>Ad, assumenda, consequatur debitis dignissimos distinctio doloremque ducimus enim
+                                        et, eum fugiat impedit in itaque iure laborum minima minus modi nam nesciunt nihil
+                                        praesentium quae quasi quo sequi sint voluptatibus.
+                                    </div>
+                                </td>
+                                <td>Approved</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>
+                                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi dicta error
+                                        facere rem. Accusantium autem commodi dolorem dolores, earum eius eum harum, impedit
+                                        ipsa minus, quidem sed similique tempore!
+                                    </div>
+                                    <div>Ad, assumenda, consequatur debitis dignissimos distinctio doloremque ducimus enim
+                                        et, eum fugiat impedit in itaque iure laborum minima minus modi nam nesciunt nihil
+                                        praesentium quae quasi quo sequi sint voluptatibus.
+                                    </div>
+                                </td>
+                                <td>Pending</td>
+                            </tr>
+                                <tr v-for="log in receivedLogs">
+                                    <td>@{{log.week}}</td>
+                                    <td>@{{log.log}}</td>
+                                    <td>Pending...</td>
+                                </tr>
                     </table>
                 </div>
             </div>
@@ -185,7 +186,7 @@
 @section('page-scripts')
     <script type="text/javascript">
         // Vue
-        var showProgress = new Vue({
+        var editProgress = new Vue({
             el: '#editProgress',
             data: {
                 url: "",
