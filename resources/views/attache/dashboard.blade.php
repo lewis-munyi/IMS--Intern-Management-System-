@@ -133,7 +133,7 @@
                 </h5>
             </div>
                 <div class="card-body">
-                    <table class="table table-bordered d-flex justify-content-center">
+                    <table class="table table-bordered d-flex justify-content-center" id="logTable">
                         <div class="row">
                             <div class="col-sm-12 d-flex justify-content-center mb-3">
                                 <a href="#" class="btn btn-primary rounded" data-toggle="modal" data-target="#editProgress">Edit</a>
@@ -245,6 +245,107 @@
                     this.params.log = document.getElementById('log').value;
                     url = "{{route('submitProgress')}}";
                     this.axiosPost(url, this.params);
+                }
+            }
+        });
+
+        // Tables vue
+        var updateTables = new Vue({
+            el: '#logTable',
+            data: {
+                // function(){
+                //     return {
+                //         url: "",
+                //         receivedLogs: []
+                //     }
+                // }
+                receivedLogs: [
+                    {"id":1,"user_id":1,"week":3,"log":"23456","created_at":"2018-10-06 13:48:28","updated_at":"2018-10-06 13:48:28"},
+                    {"id":2,"user_id":1,"week":3,"log":"23456","created_at":"2018-10-06 13:48:29","updated_at":"2018-10-06 13:48:29"}
+                ]
+            },
+            mounted(){
+                this.fetchData();
+            },
+            methods: {
+                axiosGet: function(url){
+                    var data = null;
+                    axios.get(url)
+                        .then(function (response) {
+                        // console.log(response.data);
+
+                        // this.receivedLogs = response.data;
+                        console.log(response.data);
+                        setTimeout(()=>{
+                            this.receivedLogs =  toString(response.data);
+                        }, 3000);
+                        // for(var i = 0; i < response.data.length; i++){
+                        //     console.warn(response.data[i]);
+                        //     this.receivedLogs.i = response.data[i];
+                        // }
+                            // setTimeout(()=>{
+                            //     $('#table').bootstrapTable({
+                            //         url: url,
+                            //         columns: [{
+                            //             field: 'week',
+                            //             title: 'Week'
+                            //         }, {
+                            //             field: 'log',
+                            //             title: 'Activity Log'
+                            //         }, {
+                            //             field: 'created_at',
+                            //             title: 'Created at'
+                            //         }, ]
+                            //     });
+                            // }, 5000);
+
+                            // var table = document.getElementById('logTable');
+                            // console.warn("Logging");
+                            // var tr = document.createElement("tr");
+                            // var week = document.createElement("th");
+                            // var work = document.createElement("th");
+                            // var status = document.createElement("th");
+                            // var weekTxt = document.createTextNode('Week');
+                            // var workTxt = document.createTextNode('Log');
+                            // var statusTxt = document.createTextNode('Status');
+                            // week.appendChild(weekTxt);
+                            // work.appendChild(workTxt);
+                            // status.appendChild(statusTxt);
+                            // tr.appendChild(week);
+                            // tr.appendChild(work);
+                            // tr.appendChild(status);
+                            // table.appendChild(tr);
+                            // for(var i = 0; i < response.data.length; i++){
+                            //     // console.log(response.data[i].week);
+                            //     var tr = document.createElement("tr");
+                            //     var week = document.createElement("td");
+                            //     var work = document.createElement("td");
+                            //     var status = document.createElement("td");
+                            //     var weekTxt = document.createTextNode(logs[i].week);
+                            //     var workTxt = document.createTextNode(logs[i].log);
+                            //     var statusTxt = document.createTextNode('Pending');
+                            //     //
+                            //     week.appendChild(weekTxt);
+                            //     work.appendChild(workTxt);
+                            //     status.appendChild(statusTxt);
+                            //     tr.appendChild(week);
+                            //     tr.appendChild(work);
+                            //     tr.appendChild(status);
+                            //     table.appendChild(tr);
+                                // table.innerHTML = "<tr><th>'week'</th><th>'Log'</th><th>'Status'</th></tr>";
+                                // table.innerHTML = "<tr><td>'week 1'</td><td>'Lewis Munyi'</td><td>'Approved'</td></tr>";
+                            // }
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        })
+                        .then(function () {
+                            // always executed
+                        });
+                },
+                fetchData: function(){
+                    url = "{{route('getLogs')}}";
+                    this.axiosGet(url);
                 }
             }
         });
