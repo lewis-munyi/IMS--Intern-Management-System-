@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Log;
 use Auth;
-use App\User;
+use Illuminate\Http\Request;
 
 class LogsController extends Controller
 {
@@ -19,8 +17,7 @@ class LogsController extends Controller
     {
         //Return logs for all attaches and interns
         $logs = Log::all();
-        dd($logs);
-        return view('/', compact('logs'));
+        return(json_encode($logs->toArray()));
     }
 
     /**
