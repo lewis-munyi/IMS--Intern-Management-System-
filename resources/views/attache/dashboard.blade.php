@@ -57,23 +57,68 @@
 @endsection
 @section('content')
     <div class="container-fluid">
+        {{--Snackbar--}}
+            <div id="snackbar"></div>
+        {{--end snackbar--}}
         {{--Modal--}}
         <div class="modal fade" id="editProgress" tabindex="-1" role="dialog" aria-labelledby="Edit Modal" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
+                    <form method="POST" onsubmit="return false;" v-on:submit="sendData()">
+                        @csrf
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Edit Progress</h5>
+                            <button type="submit" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div id="spinner" style="display: none">
+                                <div class="spinner">
+                                    <div class="rect1"></div>
+                                    <div class="rect2"></div>
+                                    <div class="rect3"></div>
+                                    <div class="rect4"></div>
+                                    <div class="rect5"></div>
+                                </div>
+                            </div>
+                            <div id="outside">
+                                <div class="row">
+                                    <div class="col-sm-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="weeks">Week No.</label>
+                                            <select class="custom-select mr-sm-2" id="week" v:model="week">
+                                                <option selected>Choose...</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                                <option value="4">Four</option>
+                                                <option value="5">Five</option>
+                                                <option value="6">Six</option>
+                                                <option value="7">Seven</option>
+                                                <option value="8">Eight</option>
+                                                <option value="9">Nine</option>
+                                                <option value="10">Ten</option>
+                                                <option value="11">Eleven</option>
+                                                <option value="12">Twelve</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12 col-lg-12">
+                                        <div class="form-group form-check">
+                                            <label class="form-check-label" for="log">Enter content</label>
+                                            <textarea class="form-control" rows="5" id="log" v:model="log"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center">
+                            <button  v-on:click="sendData();" class="btn btn-primary rounded" id ="submit">Save</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -89,13 +134,17 @@
             </div>
                 <div class="card-body">
                     <table class="table table-bordered d-flex justify-content-center">
+                        <div class="row">
+                            <div class="col-sm-12 d-flex justify-content-center mb-3">
+                                <a href="#" class="btn btn-primary rounded" data-toggle="modal" data-target="#editProgress">Edit</a>
+                            </div>
+                        </div>
                         <div id="progress">
 
                         <tr>
                             <th>Week</th>
                             <th>Work put in</th>
                             <th>Status</th>
-                            <th>-</th>
                         </tr>
                         <tr>
                             <td>1</td>
@@ -121,17 +170,11 @@
                                     quas quos rem, voluptas voluptate voluptatem? Unde.
                                 </div></td>
                             <td>Approved</td>
-                            <td>
-                                <a href="#" class="btn btn-primary rounded" data-toggle="modal" v-on:click="axiosPost('Hello there', 'x')" data-target="#">Edit</a>
-                            </td>
-                            <tr v-for="progress in progresses">
-                                <td>@{{progress.week}}</td>
-                                <td>@{{progress.work}}</td>
-                                <td>@{{progress.status}}</td>
-                                <td>
-                                    <a href="#" class="btn btn-primary rounded" data-toggle="modal" data-target="#editProgress">Edit</a>
-                                </td>
-                            </tr>
+                            {{--<tr v-for="progress in progresses">--}}
+                                {{--<td>@{{progress.week}}</td>--}}
+                                {{--<td>@{{progress.work}}</td>--}}
+                                {{--<td>@{{progress.status}}</td>--}}
+                            {{--</tr>--}}
                         </div>
                     </table>
                 </div>
@@ -143,58 +186,66 @@
     <script type="text/javascript">
         // Vue
         var showProgress = new Vue({
-            el: '#progress',
-            data: function() {
-                return {
-                    progresses: [
-
-                        // {'serial': '1', 'name': 'x', 'id_no':' Too', 'admission': '2435', 'university': '88843935656', 'product': '20', 'academic_year': '3', 'principal':'3000', 'running_balance' : '50'}
-                    ]
+            el: '#editProgress',
+            data: {
+                url: "",
+                params: {
+                    'week' : null,
+                    'log': null
                 }
             },
             mounted(){
-                // this.loadDataFromAPI();
-                // console.log("Hello mounted!");
-                this.axiosPost();
-            },
+                this.test();
+                            },
             methods: {
+                test: function(){
+                    console.log('Mounted');
+                },
                 axiosPost:  function(url, params){
-                    console.log(this.progresses);
-                    this.progresses = "{'week': 2,'work': 'Heloooooo World!!!!!!!!!','status': 'hapo tu'}"
-                    console.log(this.progresses);
+                    var snackbar = document.getElementById('snackbar');
+                    document.getElementById('outside').style.display="none";
+                    document.getElementById('spinner').style.display="block";
+                    document.getElementById('submit').setAttribute("disabled", true);
+                    axios.post(url, params)
+                        .then(function (response) {
+                            // console.log(response);
+                            document.getElementById("week").value = "";
+                            document.getElementById("log").value = "";
+                            document.getElementById('spinner').style.display="none";
+                            document.getElementById('outside').style.display="block";
+                            document.getElementById('submit').disabled = false;
+                            snackbar.innerHTML = "Successfully logged activity";
+                            snackbar.classList.add('show');
+                            setTimeout(()=>{
+                                snackbar.classList.remove('show');
+                            }, 3000)
+                        })
+                        .catch(function (error) {
+                            console.error(error);
+                        });
                 },
                 axoisGet: function(url, params){
-
+                    axios.get(url, {
+                        params: {
+                            ID: 12345
+                            }
+                        })
+                        .then(function (response) {
+                            console.log(response);
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        })
+                        .then(function () {
+                            // always executed
+                        });
                 },
-                // loadDataFromAPI: function(){
-                //     var self = this;
-                //     console.log(this.product);
-                //     console.log(this.from);
-                //     console.log(this.to);
-                //     ///get the data from the server/api
-                //     axios.get('url', {
-                //         params: {
-                //             'from': this.from,
-                //             'to': this.to,
-                //             'product': this.product
-                //         }
-                //     })
-                //         .then(function (response) {
-                //             // handle success
-                //             self.loans = JSON.parse(response.data);
-                //             console.error("Self loans ni" + JSON.parse(self.loans));
-                //
-                //         })
-                //         .catch(function (error) {
-                //             // handle error
-                //             console.log("error" + error);
-                //         })
-                //         .then(function () {
-                //             // always executed
-                //             console.log("exiting...");
-                //             console.error("Self loans 2 ni" + self.loans);
-                //         });
-                // }
+                sendData: function(){
+                    this.params.week = document.getElementById('week').value;
+                    this.params.log = document.getElementById('log').value;
+                    url = "{{route('submitProgress')}}";
+                    this.axiosPost(url, this.params);
+                }
             }
         });
     </script>
