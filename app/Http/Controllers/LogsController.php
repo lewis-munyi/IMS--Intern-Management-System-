@@ -48,8 +48,7 @@ class LogsController extends Controller
         $log->week = request('week');
         $log->log = request('log');
         $log->save();
-        dd($log);
-        return redirect('');
+        return (json_encode(['Success']));
     }
 
     /**
@@ -105,7 +104,7 @@ class LogsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, Log $log)
     {
         //Delete a log
         $log = Log::find($log->id);
