@@ -71,6 +71,8 @@ Route::group(['middleware'=>'auth'],function(){
 //    Intern route
     Route::resource('/intern' , 'InternController');
 
+//    Attache route
+    Route::post('submitProgress', 'LogsController@store')->name("submitProgress");
 //    Application form
     Route::get('/application', function () {
         return view('application');
