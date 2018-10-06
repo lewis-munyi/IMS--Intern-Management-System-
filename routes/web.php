@@ -72,6 +72,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::resource('/intern' , 'InternController');
 
 //    Attache route
+    Route::get('/getLogs', 'LogsController@index')->name('getLogs');
     Route::post('submitProgress', 'LogsController@store')->name("submitProgress");
 //    Application form
     Route::get('/application', function () {
