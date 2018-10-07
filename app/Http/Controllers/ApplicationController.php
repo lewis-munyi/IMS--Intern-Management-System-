@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Application;
 use Illuminate\Http\Request;
-use App\User;
-use Illuminate\Support\Facades\Storage;
 
 class ApplicationController extends Controller
 {
@@ -40,23 +38,53 @@ class ApplicationController extends Controller
         // $application->user_id = Auth::id();
         $application->name = request('name');
         $application->email = request('email');
+        $application->id_number = request('id_no');
+        $application->supervisor_email = request('supervisor');
+
+        /*
+         * File Uploads
+         *
+         */
+        $destinationPath = public_path('/files/application_documents/');
+
+        $file = $request->file('national_id');
+        $name = 'national_id.'.$application->id_number.'.'.$file->getClientOriginalExtension();
+        $application->national_id = $name;
+        $file->move($destinationPath, $name);
 
         $file = $request->file('KCSE_certificate');
-        $name = time().'.'.$file->getClientOriginalExtension();
+        $name = 'KCSE_certificate.'.$application->id_number.'.'.$file->getClientOriginalExtension();
         $application->KCSE_certificate = $name;
-        $destinationPath = public_path('/files');
         $file->move($destinationPath, $name);
-        
-        // $application->certificate_of_conduct = request('certificate_of_conduct');
-        // $application->KCSE_certificate = request('KCSE_certificate');
-        // $application->national_id = request('national_id');
-        // $application->insurance = request('insurance');
-        // $application->transcript = request('transcript');
-        // $application->application_letter = request('application_letter');
-        // $application->introduction_letter = request('introduction_letter');
-        // dd($application->toArray());
+
+        $file = $request->file('transcript');
+        $name = 'transcript.'.$application->id_number.'.'.$file->getClientOriginalExtension();
+        $application->transcript = $name;
+        $file->move($destinationPath, $name);
+
+        $file = $request->file('introduction_letter');
+        $name = 'introduction_letter.'.$application->id_number.'.'.$file->getClientOriginalExtension();
+        $application->introduction_letter = $name;
+        $file->move($destinationPath, $name);
+
+        $file = $request->file('application_letter');
+        $name = 'application_letter.'.$application->id_number.'.'.$file->getClientOriginalExtension();
+        $application->application_letter = $name;
+        $file->move($destinationPath, $name);
+
+        $file = $request->file('certificate_of_conduct');
+        $name = 'certificate_of_conduct.'.$application->id_number.'.'.$file->getClientOriginalExtension();
+        $application->certificate_of_conduct = $name;
+        $file->move($destinationPath, $name);
+
+        $file = $request->file('insurance');
+        $name = 'insurance.'.$application->id_number.'.'.$file->getClientOriginalExtension();
+        $application->insurance = $name;
+        $file->move($destinationPath, $name);
+
+//        Upload data
         $application->save();
-        return redirect('/');
+        return redirect('/application');
     }
 
     //Get my application
