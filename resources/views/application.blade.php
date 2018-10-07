@@ -60,7 +60,7 @@
                                         <div class="col col-sm-12 col-lg-2">
                                             <div class="form-group">
                                                 <label for="id_no">Copy of ID/Passport</label>
-                                                <input type="file" class="form-control" id="id_file" name="id_file" placeholder="Upload Scan" >
+                                                <input type="file" class="form-control" id="id_file" name="national_id" placeholder="Upload Scan" >
                                             </div>
                                         </div>
                                     </div>
@@ -111,13 +111,13 @@
                                         <div class="col col-sm-12 col-lg-3 ">
                                             <div class="form-group">
                                                 <label for="serial_no">Transcripts</label>
-                                                <input type="file" class="form-control" id="transcripts" name="transcripts" placeholder="Upload scan" >
+                                                <input type="file" class="form-control" id="transcripts" name="transcript" placeholder="Upload scan" >
                                             </div>
                                         </div>
                                         <div class="col col-sm-12 col-lg-3">
                                             <div class="form-group">
                                                 <label for="insurance">Letter from Institution</label>
-                                                <input type="file" class="form-control" id="introduction" name="introduction" placeholder="Upload scan" >
+                                                <input type="file" class="form-control" id="introduction" name="introduction_letter" placeholder="Upload scan" >
                                             </div>
                                         </div>
                                         <div class="col col-sm-12 col-lg-3 ">
@@ -134,13 +134,13 @@
                                         <div class="col col-sm-12 col-lg-4">
                                             <div class="form-group">
                                                 <label for="application">Application Letter</label>
-                                                <input type="file" class="form-control" id="application" name="application" placeholder="Upload scan" >
+                                                <input type="file" class="form-control" id="application" name="application_letter" placeholder="Upload scan" >
                                             </div>
                                         </div>
                                         <div class="col col-sm-12 col-lg-4 ">
                                             <div class="form-group">
                                                 <label for="serial_no">Certificate of conduct</label>
-                                                <input type="file" class="form-control" id="conduct" name="conduct" placeholder="Upload scan" >
+                                                <input type="file" class="form-control" id="conduct" name="certificate_of_conduct" placeholder="Upload scan" >
                                             </div>
                                         </div>
                                         <div class="col col-sm-12 col-lg-4">
