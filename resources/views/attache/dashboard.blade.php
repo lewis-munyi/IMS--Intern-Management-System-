@@ -87,8 +87,8 @@
                                     <div class="col-sm-12 col-lg-12">
                                         <div class="form-group">
                                             <label for="weeks">Week No.</label>
-                                            <select class="custom-select mr-sm-2" id="week" v:model="week">
-                                                <option selected>Choose...</option>
+                                            <select required class="custom-select mr-sm-2" id="week" v:model="week">
+                                                <option value="">Choose...</option>
                                                 <option value="1">One</option>
                                                 <option value="2">Two</option>
                                                 <option value="3">Three</option>
@@ -109,14 +109,14 @@
                                     <div class="col-sm-12 col-lg-12">
                                         <div class="form-group form-check">
                                             <label class="form-check-label" for="log">Enter content</label>
-                                            <textarea class="form-control" rows="5" id="log" v:model="log"></textarea>
+                                            <textarea class="form-control" rows="5" id="log" v:model="log" required></textarea>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer d-flex justify-content-center">
-                            <button  v-on:click="sendData();" class="btn btn-primary rounded" id ="submit">Save</button>
+                            <button type="submit" class="btn btn-primary rounded" id ="submit">Save</button>
                         </div>
                     </form>
                 </div>
@@ -144,37 +144,8 @@
                                 <th>Work put in</th>
                                 <th>Status</th>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>
-                                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi dicta error
-                                        facere rem. Accusantium autem commodi dolorem dolores, earum eius eum harum, impedit
-                                        ipsa minus, quidem sed similique tempore!
-                                    </div>
-                                    <div>Ad, assumenda, consequatur debitis dignissimos distinctio doloremque ducimus enim
-                                        et, eum fugiat impedit in itaque iure laborum minima minus modi nam nesciunt nihil
-                                        praesentium quae quasi quo sequi sint voluptatibus.
-                                    </div>
-                                </td>
-                                <td>Approved</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>
-                                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi dicta error
-                                        facere rem. Accusantium autem commodi dolorem dolores, earum eius eum harum, impedit
-                                        ipsa minus, quidem sed similique tempore!
-                                    </div>
-                                    <div>Ad, assumenda, consequatur debitis dignissimos distinctio doloremque ducimus enim
-                                        et, eum fugiat impedit in itaque iure laborum minima minus modi nam nesciunt nihil
-                                        praesentium quae quasi quo sequi sint voluptatibus.
-                                    </div>
-                                </td>
-                                <td>Pending</td>
-                            </tr>
                         <?php
                             for ($x = 0; $x < count($logs); $x++) {
-//                                echo "The number is: $x <br>";
                                 echo '<tr>';
                                 echo "<td>".$logs[$x]['week']."</td>";
                                 echo "<td>".$logs[$x]['log']."</td>";
@@ -199,13 +170,7 @@
                     'log': null
                 }
             },
-            mounted(){
-                this.test();
-                            },
             methods: {
-                test: function(){
-                    console.log('Mounted');
-                },
                 axiosPost:  function(url, params){
                     var snackbar = document.getElementById('snackbar');
                     document.getElementById('outside').style.display="none";
@@ -213,7 +178,6 @@
                     document.getElementById('submit').setAttribute("disabled", true);
                     axios.post(url, params)
                         .then(function (response) {
-                            // console.log(response);
                             document.getElementById("week").value = "";
                             document.getElementById("log").value = "";
                             document.getElementById('spinner').style.display="none";
@@ -223,10 +187,18 @@
                             snackbar.classList.add('show');
                             setTimeout(()=>{
                                 snackbar.classList.remove('show');
-                            }, 3000)
+                            }, 3000);
+                            location.reload(true);
                         })
                         .catch(function (error) {
-                            console.error(error);
+                            document.getElementById('spinner').style.display="none";
+                            document.getElementById('outside').style.display="block";
+                            document.getElementById('submit').disabled = false;
+                            snackbar.innerHTML = "Sorry, we are experiencing technical issues. Try again";
+                            snackbar.classList.add('show');
+                            setTimeout(()=>{
+                                snackbar.classList.remove('show');
+                            }, 4000);
                         });
                 },
                 axoisGet: function(url, params){
@@ -253,17 +225,10 @@
                 }
             }
         });
-
         // Tables vue
-        var updateTables = new Vue({
+        {{-- var updateTables = new Vue({
             el: '#logTable',
             data: {
-                // function(){
-                //     return {
-                //         url: "",
-                //         receivedLogs: []
-                //     }
-                // }
                 receivedLogs: [
                     {"id":1,"user_id":1,"week":3,"log":"23456","created_at":"2018-10-06 13:48:28","updated_at":"2018-10-06 13:48:28"},
                     {"id":2,"user_id":1,"week":3,"log":"23456","created_at":"2018-10-06 13:48:29","updated_at":"2018-10-06 13:48:29"}
@@ -353,6 +318,6 @@
                     this.axiosGet(url);
                 }
             }
-        });
+        }); --}}
     </script>
 @endsection
