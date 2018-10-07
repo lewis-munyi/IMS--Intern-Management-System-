@@ -20,8 +20,8 @@
     <h4 class="card-header">Application by {{$application->name}}</h4>
     <div class="card-body">
         <div class="row">
-            <div class="col-sm-12">
-                <div class="card pull-left" style="width: 29%;">
+            <div class="col-lg-4 col-sm-12">
+                <div class="card pull-left">
                     <div class="card-header bg-dark text-white">
                         Details
                     </div>
@@ -41,101 +41,103 @@
                         @endif
                     </ul>
                 </div>
-                <div class="card pull-right" style="width: 70%">
-                    <div class="card-header bg-dark text-white text-center">
-                        Documents
-                    </div>
-                    <ul class="list-group list-group-flush text-center">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                                <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="ID/Passport"
-                                   data-image="{{asset('files/application_documents/'.$application->national_id)}}"
-                                   data-target="#image-gallery">
-                                    <img class="img-thumbnail"
-                                         src="{{asset('files/application_documents/'.$application->national_id)}}"
-                                         alt="ID picture">
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                                <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="KCSE Certificate"
-                                   data-image="{{asset('files/application_documents/'.$application->KCSE_certificate)}}"
-                                   data-target="#image-gallery">
-                                    <img class="img-thumbnail"
-                                         src="{{asset('files/application_documents/'.$application->KCSE_certificate)}}"
-                                         alt="KCSE Certificate">
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                                <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Transcript"
-                                   data-image="{{asset('files/application_documents/'.$application->transcript)}}"
-                                   data-target="#image-gallery">
-                                    <img class="img-thumbnail"
-                                         src="{{asset('files/application_documents/'.$application->transcript)}}"
-                                         alt="Transcript">
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                                <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Letter from the school"
-                                   data-image="{{asset('files/application_documents/'.$application->introduction_letter)}}"
-                                   data-target="#image-gallery">
-                                    <img class="img-thumbnail"
-                                         src="{{asset('files/application_documents/'.$application->introduction_letter)}}"
-                                         alt="School Letter">
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                                <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Application Letter"
-                                   data-image="{{asset('files/application_documents/'.$application->application_letter)}}"
-                                   data-target="#image-gallery">
-                                    <img class="img-thumbnail"
-                                         src="{{asset('files/application_documents/'.$application->application_letter)}}"
-                                         alt="Application Letter">
-                                </a>
-                            </div>
-
-
-
-                            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                                <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Certificate of conduct"
-                                   data-image="{{asset('files/application_documents/'.$application->certificate_of_conduct)}}"
-                                   data-target="#image-gallery">
-                                    <img class="img-thumbnail"
-                                         src="{{asset('files/application_documents/'.$application->certificate_of_conduct)}}"
-                                         alt="Certificate Of conduct">
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                                <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Insurance"
-                                   data-image="{{asset('files/application_documents/'.$application->insurance)}}"
-                                   data-target="#image-gallery">
-                                    <img class="img-thumbnail"
-                                         src="{{asset('files/application_documents/'.$application->insurance)}}"
-                                         alt="Insurance">
-                                </a>
-                            </div>
+            </div>
+                <div class="col-lg-8 col-sm-12">
+                    <div class="card pull-right bg-secondary">
+                        <div class="card-header bg-dark text-white text-center">
+                            Documents
                         </div>
-                        <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title" id="image-gallery-title"></h4>
-                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <img id="image-gallery-image" class="img-responsive col-md-12" src="">
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-dark float-left rounded" id="show-previous-image"><i class="fa fa-arrow-left text-white"></i>
-                                        </button>
+                        <ul class="list-group list-group-flush text-center">
+                            <div class="row mr-1 ml-1">
+                                <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="ID/Passport"
+                                       data-image="{{asset('files/application_documents/'.$application->national_id)}}"
+                                       data-target="#image-gallery">
+                                        <img class="img-thumbnail"
+                                             src="{{asset('files/application_documents/'.$application->national_id)}}"
+                                             alt="ID picture">
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="KCSE Certificate"
+                                       data-image="{{asset('files/application_documents/'.$application->KCSE_certificate)}}"
+                                       data-target="#image-gallery">
+                                        <img class="img-thumbnail"
+                                             src="{{asset('files/application_documents/'.$application->KCSE_certificate)}}"
+                                             alt="KCSE Certificate">
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Transcript"
+                                       data-image="{{asset('files/application_documents/'.$application->transcript)}}"
+                                       data-target="#image-gallery">
+                                        <img class="img-thumbnail"
+                                             src="{{asset('files/application_documents/'.$application->transcript)}}"
+                                             alt="Transcript">
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Letter from the school"
+                                       data-image="{{asset('files/application_documents/'.$application->introduction_letter)}}"
+                                       data-target="#image-gallery">
+                                        <img class="img-thumbnail"
+                                             src="{{asset('files/application_documents/'.$application->introduction_letter)}}"
+                                             alt="School Letter">
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Application Letter"
+                                       data-image="{{asset('files/application_documents/'.$application->application_letter)}}"
+                                       data-target="#image-gallery">
+                                        <img class="img-thumbnail"
+                                             src="{{asset('files/application_documents/'.$application->application_letter)}}"
+                                             alt="Application Letter">
+                                    </a>
+                                </div>
 
-                                        <button type="button" id="show-next-image" class="btn btn-dark rounded float-right"><i class="fa fa-arrow-right text-white"></i>
-                                        </button>
+
+
+                                <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Certificate of conduct"
+                                       data-image="{{asset('files/application_documents/'.$application->certificate_of_conduct)}}"
+                                       data-target="#image-gallery">
+                                        <img class="img-thumbnail"
+                                             src="{{asset('files/application_documents/'.$application->certificate_of_conduct)}}"
+                                             alt="Certificate Of conduct">
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Insurance"
+                                       data-image="{{asset('files/application_documents/'.$application->insurance)}}"
+                                       data-target="#image-gallery">
+                                        <img class="img-thumbnail"
+                                             src="{{asset('files/application_documents/'.$application->insurance)}}"
+                                             alt="Insurance">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="image-gallery-title"></h4>
+                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img id="image-gallery-image" class="img-responsive col-md-12" src="">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-dark float-left rounded" id="show-previous-image"><i class="fa fa-arrow-left text-white"></i>
+                                            </button>
+                                            <button type="button" id="show-next-image" class="btn btn-dark rounded float-right"><i class="fa fa-arrow-right text-white"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </ul>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
