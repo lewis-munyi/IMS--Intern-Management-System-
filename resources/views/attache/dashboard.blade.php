@@ -172,11 +172,15 @@
                                 </td>
                                 <td>Pending</td>
                             </tr>
-                                <tr v-for="log in receivedLogs">
-                                    <td>@{{log.week}}</td>
-                                    <td>@{{log.log}}</td>
-                                    <td>Pending...</td>
-                                </tr>
+                        <?php
+                            for ($x = 0; $x < count($logs); $x++) {
+//                                echo "The number is: $x <br>";
+                                echo '<tr>';
+                                echo "<td>".$logs[$x]['week']."</td>";
+                                echo "<td>".$logs[$x]['log']."</td>";
+                                echo "<td>Pending ...</td>";
+                                echo '</tr>';
+                            }?>
                     </table>
                 </div>
             </div>

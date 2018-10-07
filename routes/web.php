@@ -71,7 +71,8 @@ Route::group(['middleware'=>'auth'],function(){
 //    Intern route
     Route::resource('/intern' , 'InternController');
 
-//    Attache route
+//    Attache routes
+    Route::get('/attache','LogsController@index')->name('attache');
     Route::get('/getLogs', 'LogsController@index')->name('getLogs');
     Route::post('submitProgress', 'LogsController@store')->name("submitProgress");
 //    Application form
@@ -95,9 +96,7 @@ Route::group(['middleware'=>'auth'],function(){
         return view('boss.interns');
     })->name('interns');
 
-    Route::get('/attache', function () {
-        return view('attache.dashboard');
-    })->name('attache');
+
 
     Route::get('/test', function () {
         return view('super_admin.test');

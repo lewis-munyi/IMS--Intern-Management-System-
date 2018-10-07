@@ -17,7 +17,9 @@ class LogsController extends Controller
     {
         //Return logs for all attaches and interns
         $logs = Log::all();
-        return(json_encode($logs->toArray()));
+        $logs->toArray();
+        return view('attache.dashboard')->with('logs', $logs->toArray());
+//        return(json_encode($logs->toArray()));
     }
 
     /**
