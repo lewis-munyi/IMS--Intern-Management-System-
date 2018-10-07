@@ -128,7 +128,7 @@
             <div class="card-header d-flex justify-content-center" id="headingTwo">
                 <h5 class="mb-0">
                     <a class="display-4  collapsed"  data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Progress
+                        Logbook
                     </a>
                 </h5>
             </div>
@@ -141,7 +141,7 @@
                         </div>
                             <tr>
                                 <th>Week</th>
-                                <th>Work put in</th>
+                                <th>Logs</th>
                                 <th>Status</th>
                             </tr>
                         <?php
