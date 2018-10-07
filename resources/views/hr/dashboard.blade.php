@@ -58,18 +58,8 @@
                             <div class="stat-content dib">
                                 <div class="stat-text">Total attaches</div>
                                 <div class="stat-digit">7</div>
-                                <a href="#" class="btn btn-primary">Manage</a>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-6">
-                <div class="card text-white bg-white mb-3 rounded" style="max-width: 18rem;">
-                    <div class="card-header text-black-50"><h5 class="card-title">Primary card title</h5></div>
-                    <div class="card-body">
-                        <h5 class="card-title">Primary card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
                 </div>
             </div>
@@ -77,10 +67,23 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="stat-widget-one">
-                            <div class="stat-icon dib"><i class="ti-layout-grid2 text-warning border-warning"></i></div>
+                            <div class="stat-icon dib"><i class="ti-user text-primary border-primary"></i></div>
                             <div class="stat-content dib">
-                                <div class="stat-text">FILE UPLOAD</div>
-                                <div class="stat-text"></i><a href="file">PDF DOCS</a></div>
+                                <div class="stat-text">Total attaches</div>
+                                <div class="stat-digit">7</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="ti-user text-primary border-primary"></i></div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">Total attaches</div>
+                                <div class="stat-digit">7</div>
                             </div>
                         </div>
                     </div>
@@ -94,107 +97,195 @@
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <div class="accordion" id="accordionExample">
-                    <div class="card">
-                        <div class="card-header" id="headingOne">
+                <div class="accordion" id="Applications">
+                    <div class="card rounded">
+                        <div class="card-header bg-secondary rounded d-flex justify-content-center" id="allHeading">
                             <h5 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <button class="btn btn-primary rounded " type="button" data-toggle="collapse" data-target="#allCollapsed" aria-expanded="true" aria-controls="allCollapsed">
                                     All Applications
                                 </button>
                             </h5>
                         </div>
 
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div id="allCollapsed" class="collapse" aria-labelledby="allHeading" data-parent="#Applications">
                             <div class="card-body">
-                                <table class="table table-bordered table-hover">
-                                    <tr>
-                                        <th>Number</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>National_ID</th>
-                                        <th>ROLE</th>
-                                        <th>DEPARTMENT</th>
-                                        <th>Approval</th>
-                                        <th></th>
-                                    </tr>
-                                    @foreach($applications as $application)
-                                    <tr class='clickable-row' data-href='http://127.0.0.1:8000/#'>
-                                        <td>{{$application->id}}</td>
-                                        <td>{{$application->name}}</td>
-                                        <td>{{$application->email}}</td>
-                                        <td>129824837359</td>
-                                        <td>Attachment</td>
-                                        <td>ICT</td>
-                                        <td>
-                                            @if($application->status == 'accepted')
-                                            <h5><span class="badge badge-pill badge-success em-4">{{$application->status}}</span></h5>
-                                            @elseif($application->status == 'rejected')
-                                            <h5><span class="badge badge-pill badge-danger em-3">{{$application->status}}</span></h5>
-                                            @else
-                                            <h5><span class="badge badge-pill badge-warning em-3">{{$application->status}}</span></h5>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover">
+                                        <tr>
+                                            <th>Number</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>National ID</th>
+                                            <th>ROLE</th>
+                                            <th>DEPARTMENT</th>
+                                            <th>Approval</th>
+                                            <th></th>
+                                        </tr>
+                                        @foreach($applications as $application)
+                                        <tr class='clickable-row' data-href='http://127.0.0.1:8000/#'>
+                                            <td>{{$application->id}}</td>
+                                            <td>{{$application->name}}</td>
+                                            <td>{{$application->email}}</td>
+                                            <td>129824837359</td>
+                                            <td>Attachment</td>
+                                            <td>ICT</td>
+                                            <td>
+                                                @if($application->status == 'accepted')
+                                                <h5><span class="badge badge-pill badge-success em-4">{{$application->status}}</span></h5>
+                                                @elseif($application->status == 'rejected')
+                                                <h5><span class="badge badge-pill badge-danger em-3">{{$application->status}}</span></h5>
+                                                @else
+                                                <h5><span class="badge badge-pill badge-warning em-3">{{$application->status}}</span></h5>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-outline-primary rounded" linkUrl = "/hr/applications/{{$application->id}}" href="/hr/applications/{{$application->id}}">View</a>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion" id="pending">
+                    <div class="card rounded">
+                        <div class="card-header bg-secondary rounded d-flex justify-content-center" id="pendingHeading">
+                            <h5 class="mb-0">
+                                <button class="btn btn-warning rounded collapsed" type="button" data-toggle="collapse" data-target="#pendingApplications" aria-expanded="false" aria-controls="pendingApplications">
+                                    Pending applications
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="pendingApplications" class="collapse show" aria-labelledby="pendingHeading" data-parent="#pending">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover">
+                                        <tr>
+                                            <th>Number</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>National ID</th>
+                                            <th>ROLE</th>
+                                            <th>DEPARTMENT</th>
+                                            <th>Approval</th>
+                                            <th></th>
+                                        </tr>
+                                        @foreach($applications as $application)
+                                            @if($application->status == 'pending')
+                                                <tr class='clickable-row' data-href='http://127.0.0.1:8000/#'>
+                                                    <td>{{$application->id}}</td>
+                                                    <td>{{$application->name}}</td>
+                                                    <td>{{$application->email}}</td>
+                                                    <td>129824837359</td>
+                                                    <td>Attachment</td>
+                                                    <td>ICT</td>
+                                                    <td>
+                                                        <h5><span class="badge badge-pill badge-success em-4">{{$application->status}}</span></h5>
+                                                    </td>
+                                                    <td>
+                                                        <a class="btn btn-outline-primary rounded" linkUrl = "/hr/applications/{{$application->id}}" href="/hr/applications/{{$application->id}}">View</a>
+                                                    </td>
+                                                </tr>
                                             @endif
-                                        </td>
-                                        <td>
-                                            <a class="btn btn-outline-primary rounded" linkUrl = "/hr/applications/{{$application->id}}" href="/hr/applications/{{$application->id}}">View</a>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </table>
+                                        @endforeach
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header" id="headingTwo">
+                </div>
+                <div class="accordion" id="approved">
+                    <div class="card rounded">
+                        <div class="card-header bg-secondary rounded d-flex justify-content-center" id="pendingHeading">
                             <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    All Attaches list
+                                <button class="btn btn-success rounded collapsed" type="button" data-toggle="collapse" data-target="#approvedApplications" aria-expanded="false" aria-controls="approvedApplications">
+                                    Approved applications
                                 </button>
                             </h5>
                         </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div id="approvedApplications" class="collapse" aria-labelledby="pendingHeading" data-parent="#approved">
                             <div class="card-body">
-                                <table class="table table-bordered">
-                                    <tr>
-                                        <th>Number</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>National_ID</th>
-                                        <th>ROLE</th>
-                                        <th>DEPARTMENT</th>
-                                        <th>Options</th>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Casey Neitstatew</td>
-                                        <td>lewismunyi9447@gmail.com</td>
-                                        <td>129824837359</td>
-                                        <td>Intern</td>
-                                        <td>ICT</td>
-                                        <td>
-                                            <a href="http://localhost:8000/student/95/edit">Edit</a>
-                                            &nbsp;|&nbsp;
-                                            <form action="http://localhost:8000/student/95" method="post" style="display: inline-block;" >
-                                                <input type="hidden" name="_token" value="uEsZM8NHLLpcg7kw56eVmDmRhlsOQgrGrXqkjd4I">
-                                                <input type="hidden" name="_method" value="DELETE">
-                                                <a href="javascript:" onclick="confirm_delete(this.parentNode)">Delete</a>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                </table>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover">
+                                        <tr>
+                                            <th>Number</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>National ID</th>
+                                            <th>ROLE</th>
+                                            <th>DEPARTMENT</th>
+                                            <th>Approval</th>
+                                            <th></th>
+                                        </tr>
+                                        @foreach($applications as $application)
+                                            @if($application->status == 'accepted')
+                                                <tr class='clickable-row' data-href='http://127.0.0.1:8000/#'>
+                                                    <td>{{$application->id}}</td>
+                                                    <td>{{$application->name}}</td>
+                                                    <td>{{$application->email}}</td>
+                                                    <td>129824837359</td>
+                                                    <td>Attachment</td>
+                                                    <td>ICT</td>
+                                                    <td>
+                                                        <h5><span class="badge badge-pill badge-success em-4">{{$application->status}}</span></h5>
+                                                    </td>
+                                                    <td>
+                                                        <a class="btn btn-outline-primary rounded" linkUrl = "/hr/applications/{{$application->id}}" href="/hr/applications/{{$application->id}}">View</a>
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                        @endforeach
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header" id="headingThree">
+                </div>
+                <div class="accordion" id="rejected">
+                    <div class="card rounded">
+                        <div class="card-header bg-secondary rounded d-flex justify-content-center" id="pendingHeading">
                             <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Collapsible Group Item #3
+                                <button class="btn btn-danger rounded collapsed" type="button" data-toggle="collapse" data-target="#rejectedApplications" aria-expanded="false" aria-controls="rejectedApplications">
+                                    Rejected applications
                                 </button>
                             </h5>
                         </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <div id="rejectedApplications" class="collapse" aria-labelledby="rejectingHeading" data-parent="#rejected">
                             <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover">
+                                        <tr>
+                                            <th>Number</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>National ID</th>
+                                            <th>ROLE</th>
+                                            <th>DEPARTMENT</th>
+                                            <th>Approval</th>
+                                            <th></th>
+                                        </tr>
+                                        @foreach($applications as $application)
+                                            @if($application->status == 'rejected')
+                                                <tr class='clickable-row' data-href='http://127.0.0.1:8000/#'>
+                                                    <td>{{$application->id}}</td>
+                                                    <td>{{$application->name}}</td>
+                                                    <td>{{$application->email}}</td>
+                                                    <td>129824837359</td>
+                                                    <td>Attachment</td>
+                                                    <td>ICT</td>
+                                                    <td>
+                                                        <h5><span class="badge badge-pill badge-success em-4">{{$application->status}}</span></h5>
+                                                    </td>
+                                                    <td>
+                                                        <a class="btn btn-outline-primary rounded" linkUrl = "/hr/applications/{{$application->id}}" href="/hr/applications/{{$application->id}}">View</a>
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                        @endforeach
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -202,6 +293,9 @@
             </div>
         </div>
     </div>
+
+@endsection
+@section('page-scripts')
     <script>
         jQuery(document).ready(function($) {
             $(".clickable-row").click(function() {
@@ -209,6 +303,4 @@
             });
         });
     </script>
-@endsection
-@section('page-scripts')
 @endsection
