@@ -39,13 +39,13 @@
                                 <fieldset class="scheduler-border" >
                                     <legend class="scheduler-border">Personal details</legend>
                                     <div class="row d-flex justify-content-center">
-                                        <div class="col col-sm-5 col-lg-4">
+                                        <div class="col col-sm-12 col-lg-4">
                                             <div class="form-group">
                                                 <label for="name">Name</label>
                                                 <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" >
                                             </div>
                                         </div>
-                                        <div class="col col-sm-5 col-lg-4 ">
+                                        <div class="col col-sm-12 col-lg-4 ">
                                             <div class="form-group">
                                                 <label for="id_no">Email address</label>
                                                 <input type="email" class="form-control" id="email" name="email" placeholder="name@site.domain" >
