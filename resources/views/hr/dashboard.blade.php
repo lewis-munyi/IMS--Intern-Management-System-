@@ -80,7 +80,7 @@
                             <div class="stat-icon dib"><i class="ti-layout-grid2 text-warning border-warning"></i></div>
                             <div class="stat-content dib">
                                 <div class="stat-text">FILE UPLOAD</div>
-                                <div class="stat-text"></i><a href="file">PDF DOCS</a></li></div>
+                                <div class="stat-text"></i><a href="file">PDF DOCS</a></div>
                             </div>
                         </div>
                     </div>
@@ -115,6 +115,7 @@
                                         <th>ROLE</th>
                                         <th>DEPARTMENT</th>
                                         <th>Approval</th>
+                                        <th></th>
                                     </tr>
                                     @foreach($applications as $application)
                                     <tr class='clickable-row' data-href='http://127.0.0.1:8000/#'>
@@ -125,15 +126,16 @@
                                         <td>Attachment</td>
                                         <td>ICT</td>
                                         <td>
-                                            <a href="/hr/applications/{{$application->id}}">View</a>
-                                            &nbsp;|&nbsp;
                                             @if($application->status == 'accepted')
-                                            <h5><span class="badge badge-pill badge-success em-3">{{$application->status}}</span></h5>
+                                            <h5><span class="badge badge-pill badge-success em-4">{{$application->status}}</span></h5>
                                             @elseif($application->status == 'rejected')
                                             <h5><span class="badge badge-pill badge-danger em-3">{{$application->status}}</span></h5>
                                             @else
                                             <h5><span class="badge badge-pill badge-warning em-3">{{$application->status}}</span></h5>
                                             @endif
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-outline-primary rounded" linkUrl = "/hr/applications/{{$application->id}}" href="/hr/applications/{{$application->id}}">View</a>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -174,7 +176,7 @@
                                             <form action="http://localhost:8000/student/95" method="post" style="display: inline-block;" >
                                                 <input type="hidden" name="_token" value="uEsZM8NHLLpcg7kw56eVmDmRhlsOQgrGrXqkjd4I">
                                                 <input type="hidden" name="_method" value="DELETE">
-                                                <a href="javascript:;" onclick="confirm_delete(this.parentNode)">Delete</a>
+                                                <a href="javascript:" onclick="confirm_delete(this.parentNode)">Delete</a>
                                             </form>
                                         </td>
                                     </tr>
