@@ -16,7 +16,7 @@ Route::get('/welcome', function () {
 
 // Landing page
 Route::get('/', function () {
-    return view('dashboard');
+    return view('landing');
 });
 
 Route::get('/logout', function () {

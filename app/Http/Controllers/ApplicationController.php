@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 class ApplicationController extends Controller
 {
-    
     public function index()
     {
         //
@@ -105,7 +104,7 @@ class ApplicationController extends Controller
         $path = "files"."/".$application->KCSE_certificate;
         $pdf = $parser->parseFile($path);
         $text = $pdf->getText();
-         
+
         dd($text);
     }
 
