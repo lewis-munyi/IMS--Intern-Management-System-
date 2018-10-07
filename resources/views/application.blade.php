@@ -1,26 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <style>
-        /*Fieldset Legend*/
-        fieldset.scheduler-border {
-            border: 1px groove #ddd !important;
-            padding: 0 1.4em 1.4em 1.4em !important;
-            margin: 0 0 1.5em 0 !important;
-            -webkit-box-shadow:  0px 0px 0px 0px #000;
-            box-shadow:  0px 0px 0px 0px #000;
-        }
-
-        legend.scheduler-border {
-            font-size: 1.2em !important;
-            font-weight: bold !important;
-            text-align: center !important;
-            width:auto;
-            padding:0 10px;
-            border-bottom:none;
-        }
-        /*End fieldset*/
-    </style>
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -39,13 +19,13 @@
                                 <fieldset class="scheduler-border" >
                                     <legend class="scheduler-border">Personal details</legend>
                                     <div class="row d-flex justify-content-center">
-                                        <div class="col col-sm-5 col-lg-4">
+                                        <div class="col col-sm-12 col-lg-4">
                                             <div class="form-group">
                                                 <label for="name">Name</label>
                                                 <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" >
                                             </div>
                                         </div>
-                                        <div class="col col-sm-5 col-lg-4 ">
+                                        <div class="col col-sm-12 col-lg-4 ">
                                             <div class="form-group">
                                                 <label for="id_no">Email address</label>
                                                 <input type="email" class="form-control" id="email" name="email" placeholder="name@site.domain" >
@@ -60,7 +40,7 @@
                                         <div class="col col-sm-12 col-lg-2">
                                             <div class="form-group">
                                                 <label for="id_no">Copy of ID/Passport</label>
-                                                <input type="file" class="form-control" id="id_file" name="id_file" placeholder="Upload Scan" >
+                                                <input type="file" class="form-control" id="id_file" name="national_id" placeholder="Upload Scan" >
                                             </div>
                                         </div>
                                     </div>
@@ -77,13 +57,13 @@
                                         <div class="col col-sm-12 col-lg-3 ">
                                             <div class="form-group">
                                                 <label for="serial_no">Transcripts</label>
-                                                <input type="file" class="form-control" id="transcripts" name="transcripts" placeholder="Upload scan" >
+                                                <input type="file" class="form-control" id="transcripts" name="transcript" placeholder="Upload scan" >
                                             </div>
                                         </div>
                                         <div class="col col-sm-12 col-lg-3">
                                             <div class="form-group">
                                                 <label for="insurance">Letter from Institution</label>
-                                                <input type="file" class="form-control" id="introduction" name="introduction" placeholder="Upload scan" >
+                                                <input type="file" class="form-control" id="introduction" name="introduction_letter" placeholder="Upload scan" >
                                             </div>
                                         </div>
                                         <div class="col col-sm-12 col-lg-3 ">
@@ -100,13 +80,13 @@
                                         <div class="col col-sm-12 col-lg-4">
                                             <div class="form-group">
                                                 <label for="application">Application Letter</label>
-                                                <input type="file" class="form-control" id="application" name="application" placeholder="Upload scan" >
+                                                <input type="file" class="form-control" id="application" name="application_letter" placeholder="Upload scan" >
                                             </div>
                                         </div>
                                         <div class="col col-sm-12 col-lg-4 ">
                                             <div class="form-group">
                                                 <label for="serial_no">Certificate of conduct</label>
-                                                <input type="file" class="form-control" id="conduct" name="conduct" placeholder="Upload scan" >
+                                                <input type="file" class="form-control" id="conduct" name="certificate_of_conduct" placeholder="Upload scan" >
                                             </div>
                                         </div>
                                         <div class="col col-sm-12 col-lg-4">
