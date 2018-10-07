@@ -9,18 +9,16 @@
         <p class="card-text"> <h3>Status: <span class="badge badge-pill badge-warning em-3">{{$application->status}}</span></h3></p>
         @if($application->status == 'pending')
         <div class="row">
-            <div class="col-md-1">
-                <form method="post" action="/hr/applications/{{$application->id}}/accept">
+            <div class="col-sm-12 d-flex justify-content-center">
+                <form method="post" action="/hr/applications/{{$application->id}}/reject" class="mr-1">
                     {{csrf_field()}}
                     {{method_field('PUT')}}
-                    <button class="btn btn-success">Accept</button>
+                    <button class="btn btn-danger rounded">Reject</button>
                 </form>
-            </div>
-            <div class="col-md-1">
-                <form method="post" action="/hr/applications/{{$application->id}}/reject">
+                <form method="post" action="/hr/applications/{{$application->id}}/accept" class="ml-1">
                     {{csrf_field()}}
                     {{method_field('PUT')}}
-                    <button class="btn btn-danger">Reject</button>
+                    <button class="btn btn-success rounded">Accept</button>
                 </form>
             </div>
         </div>
