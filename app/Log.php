@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Application extends Model
+class Log extends Model
 {
     /**
      * The attributes that should be hidden for arrays.
@@ -13,10 +13,10 @@ class Application extends Model
      */
     // protected $hidden = [
     // ];
-
+    //
+    //
     public function user()
     {
-        return $this->belongsTo(User::class);    
+        return $this->belongsTo(User::class);
     }
-    
 }

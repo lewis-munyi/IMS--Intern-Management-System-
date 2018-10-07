@@ -34,7 +34,15 @@ Route::get('/logout', function () {
 // Auth views
 Auth::routes();
 
+Route::get('/landingpage', function () {
+    return view('landing');
+})->name('landingpage');
+
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/school', function () {
+    return view('school.dashboard');
+})->name('school');
 
 /*
  *
@@ -45,19 +53,54 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware'=>'auth'],function(){
 
 //      HR Dashboard
-    Route::get('/hr', function (){
-        return view('hr.dashboard');
-    })->name('hr');
+    Route::get('/hr', 'ApplicationController@index')->name('hr');
+
+    //Application approval
+    Route::get('/hr/applications/{application}', 'ApplicationController@application')->name('application');
+
+    //View documents
+    Route::get('/hr/applications/{application}/documents', 'ApplicationController@viewDocument' );
+
+    //Accept application
+    Route::put('/hr/applications/{application}/accept', 'ApplicationController@acceptApplication')->name('accept');
+
+    //Reject Application
+    Route::put('/hr/applications/{application}/reject', 'ApplicationController@rejectApplication')->name('reject');
+    
 
 //    Intern route
     Route::resource('/intern' , 'InternController');
 
-//Application form
+//    Application form
     Route::get('/application', function () {
-        return view('dashboard');
-    });
+        return view('application');
+    })->name('application');
 
+    Route::post('/application', 'ApplicationController@store')->name('apply');
 
+    Route::get('/list-applications', function () {
+        return view('hr.applications');
+    })->name('applications');
+
+    Route::get('/admin', function () {
+        return view('boss.dashboard');
+    })->name('admin');
+
+    Route::get('/interns', function () {
+        return view('boss.interns');
+    })->name('interns');
+
+    Route::get('/attache', function () {
+        return view('attache.dashboard');
+    })->name('attache');
+
+    Route::get('/test', function () {
+        return view('super_admin.test');
+    })->name('test');
+
+    Route::get('/super', function () {
+        return view('super_admin.dashboard');
+    })->name('superadmin');
 
 });
 
@@ -86,3 +129,7 @@ Route::group(['middleware'=>'auth'],function(){
 
 //Accept or reject application (Post)
 //send email to applicant
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
