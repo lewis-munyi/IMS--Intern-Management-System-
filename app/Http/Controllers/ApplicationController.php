@@ -29,7 +29,7 @@ class ApplicationController extends Controller
         return view('application');
     }
 
-    //Post an application
+    // Upload an application
     public function store(Request $request)
     {
         //Post the application
@@ -93,7 +93,7 @@ class ApplicationController extends Controller
         //Enter email Address
         $email = request('email');
         $application = Application::where('email', $email)->get();
-        dd($appilcation);
+//        dd($application);
         return view('myApplication', compact('application'));
     }
 
@@ -114,6 +114,7 @@ class ApplicationController extends Controller
         $application = Application::find($application->id);
         $application->status = 'accepted';
         $application->save();
+//        sendemail();
         return redirect()->route('hr');  
     }
 
