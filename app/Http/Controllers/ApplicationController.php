@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Application;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ApplicationController extends Controller
 {
@@ -82,8 +83,8 @@ class ApplicationController extends Controller
         $file->move($destinationPath, $name);
 
 //        Upload data
-        $application->save();
-        return redirect('/application');
+//        $application->save();
+        return redirect('/application')->with('success', "successful");
     }
 
     //Get my application
@@ -93,7 +94,7 @@ class ApplicationController extends Controller
         //Enter email Address
         $email = request('email');
         $application = Application::where('email', $email)->get();
-        dd($appilcation);
+        dd($application);
         return view('myApplication', compact('application'));
     }
 
@@ -121,8 +122,22 @@ class ApplicationController extends Controller
     public function rejectApplication(Application $application, Request $request)
     {
         $application = Application::find($application->id);
-        $application->status = 'rejected';
-        $application->save();
+        try {
+            Storage::delete([
+                '/files/application_documents/' . $application->national_id,
+                '/files/application_documents/' . $application->KCSE_Certificate,
+                '/files/application_documents/' . $application->transcript,
+                '/files/application_documents/' . $application->introduction_letter,
+                '/files/application_documents/' . $application->application_letter,
+                '/files/application_documents/' . $application->certificate_of_conduct,
+                '/files/application_documents/' . $application->insurance
+            ]);
+        }
+        catch (exception $error){
+           echo 'Could not delete documents';
+        }
+//        $application->status = 'rejected';
+        $application->delete();
         return redirect()->route('hr');  
     }
 

@@ -135,7 +135,7 @@
                                                 @elseif($application->status == 'rejected')
                                                 <h5><span class="badge badge-pill badge-danger em-3">{{$application->status}}</span></h5>
                                                 @else
-                                                <h5><span class="badge badge-pill badge-warning em-3">{{$application->status}}</span></h5>
+                                                <h5><span class="badge badge-pill badge-secondary em-3">{{$application->status}}</span></h5>
                                                 @endif
                                             </td>
                                             <td>
@@ -182,7 +182,7 @@
                                                     <td>Attachment</td>
                                                     <td>ICT</td>
                                                     <td>
-                                                        <h5><span class="badge badge-pill badge-success em-4">{{$application->status}}</span></h5>
+                                                        <h5><span class="badge badge-pill badge-secondary em-4">{{$application->status}}</span></h5>
                                                     </td>
                                                     <td>
                                                         <a class="btn btn-outline-primary rounded" linkUrl = "/hr/applications/{{$application->id}}" href="/hr/applications/{{$application->id}}">View</a>
