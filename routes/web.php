@@ -16,7 +16,7 @@ Route::get('/welcome', function () {
 
 // Landing page
 Route::get('/', function () {
-    return view('application');
+    return view('landing');
 });
 
 Route::get('/logout', function () {
@@ -24,7 +24,9 @@ Route::get('/logout', function () {
     return view('welcome');
 });
 
-
+Route::get('/landingpage', function () {
+    return view('landing');
+})->name('landingpage');
 /*
  *
  * Auth views
@@ -44,9 +46,7 @@ Route::get('/home', 'HomeController@index')->name('home');
  */
 Route::group(['middleware'=>'auth'],function(){
 
-    Route::get('/landingpage', function () {
-        return view('landing');
-    })->name('landingpage');
+    Route::get('/verify', 'verifyController@index')->name('verify');
 
     Route::get('/school', function () {
         return view('school.dashboard');
@@ -77,7 +77,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::post('submitProgress', 'LogsController@store')->name("submitProgress");
 //    Application form
     Route::get('/application', function () {
-        return view('application');
+        return view('application')->with('success', 'success');
     })->name('application');
 
     Route::post('/application', 'ApplicationController@store')->name('apply');
